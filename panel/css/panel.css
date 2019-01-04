@@ -1,0 +1,176 @@
+/*	VARIABLES	*/
+:root {
+	--background: #f3f3f3;
+	--linkColor: #0bb2d4;	
+	--linkHover: #17b3a3;
+	--boxColor: #17b3a3;
+	--buttonColor: #3e8ef7;
+	--buttonHover: #589ffc;
+	--buttonText: #fff;
+	--inputBorder: #3e8ef7;
+	--inputHover: hsl(214, 98%, 68%);
+	--miniBar:  #0bb2d4;
+	--miniHover:  #28c0de;
+}
+/**/
+@font-face {
+    font-family: Source; /* Para títulos h1, h2, h3, h4, h5 y h6 */
+    src: url('font/SourceSansPro-Light.ttf');
+}
+@font-face {
+	font-family: Roboto; /* Para párrafos y listas */
+	src: url('font/Roboto-Regular.ttf');
+}
+/**/
+h1, h2, h3, h4, h5, h6 {font-family: Source;color: #000;}
+p, ul, ol {line-height: 30px;font-family: Roboto;color: #252525;font-size: 15px;}
+a {color: var(--linkColor);border-bottom: 1px solid var(--linkColor);text-decoration: none;}
+a:hover {color: var(--linkHover);border-bottom: 1px solid var(--linkHover);text-decoration: none;}
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Roboto;
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+	font-family: Roboto;
+}
+*:before,
+*:after {
+	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a {
+	color: var(--linkColor);
+	text-decoration: none;
+	border-bottom: 2px solid var(--linkColor);
+	padding-bottom: 2px;
+	cursor: pointer;
+}
+a:hover {
+	color: var(--linkHover);
+	border-bottom: 2px solid var(--linkHover);
+}
+/**/
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background-color: var(--background);
+	font-family: Roboto;
+	/* Para evitar que haga quilombos en presencia de cajas flotantes	*/
+	content: "";
+	display: table;
+	clear: both;
+}
+/**/
+#root {
+	padding: 10px;
+	display: grid;
+	grid-template-columns: auto 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-gap: 20px;
+}
+/*				*/
+/*	#root #sidebar {
+	grid-row-start: 1;
+	grid-row-end: 4;
+	border-right: 3px solid var(--panelColor);
+}
+#root #sidebar ul {padding: 10px;}
+#root #lastPosts {
+	grid-row-start: 1;
+	grid-row-end: 4;
+}			*/
+#root .box {
+	border: 2px dashed var(--background);
+	border-radius: 3px;
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: 0 0 3px #212121;
+}
+#root .box ul * {
+	list-style-type: circle;
+	margin: 10px 5px;
+}
+#root .box.dashed {
+	border: 2px dashed var(--boxColor);
+	border-radius: 10px;
+	background-color: transparent;
+	box-shadow: 0 0 0 var(--background);
+}
+/*	INPUT STYLES	*/
+#root .box input, #root .box select {
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 5px;
+	outline: none;
+	border: 1px solid var(--inputBorder);
+	border-radius: 5px;
+}
+#root .box input:hover, #root .box select:hover {
+	border: 1px solid var(--inputHover);
+	border-radius: 5px;
+}
+#root .box input[type=submit] {background-color: var(--buttonColor);color: var(--buttonText);}
+#root .box input:hover[type=submit] {background-color: var(--buttonHover);box-shadow: 0 0 2px #212121;}
+#root .box textarea {
+	width: 100%;
+	min-height: 85%;
+	padding: 5px;
+	outline: none;
+	border: 1px solid var(--inputBorder);
+}
+#root .box textarea:hover {
+	border: 1px solid var(--inputHover);
+}
+#root .box .column {
+	
+}
+/*	MOD	::	USERS	*/
+#root .box.users {
+	border: 2px dashed var(--helperBar);
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+}
+/*	Posts	*/
+#root .box.posts {
+	border: 2px dashed var(--helperBar);
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+#root .box.posts #data {
+	grid-template-columns: 100%;
+	grid-template-rows: 1fr 1fr;
+}
+#root .box.posts #miniBar {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	background-color: var(--miniBar);
+	list-style-type: none;
+}
+#root .box.posts #miniBar:hover {
+	background-color: var(--miniHover);
+	box-shadow: 0 0 2px #212121;
+}
+#root .box.posts #miniBar a {
+	color: #292929;
+	border: none;
+}
+#root .box.posts #miniBar a:hover {
+	color: #212121;
+}
+#root .box.posts #miniBar ul {list-style-type: none;}
+#root .box.posts #miniBar ul li {
+	display: inline;
+	font-family: Source;
+	font-size: 14px;
+}

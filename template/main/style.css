@@ -1,0 +1,218 @@
+@font-face {
+    font-family: PalanquinR; /* Para el texto del header */
+    src: url('../font/Palanquin-Regular.ttf');
+}
+@font-face {
+    font-family: PalanquinT; /* Para títulos h1, h2, h3, h4, h5 y h6 */
+    src: url('../font/Palanquin-Thin.ttf');
+}
+/**/
+h1, h2, h3, h4, h5, h6 {font-family: PalanquinT;}
+p {line-height: 30px;font-family: sans-serif;}
+ul {font-family: sans-serif;}
+* {
+	padding: 0;
+	margin: 0;
+	cursor: default;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+a {
+	color: #5b75bf;
+	text-decoration: none;
+	border-bottom: 2px solid #5b75bf;
+	padding-bottom: 2px;
+	cursor: pointer;
+}
+a:hover {
+	color: #9172bf;
+	border-bottom: 2px solid #9172bf;
+}
+/**/
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background-color: #fff;
+	/* Para evitar que haga quilombos en presencia de cajas flotantes	*/
+	content: "";
+	display: table;
+	clear: both;
+}
+header {
+	width: 100%;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	/* Para evitar que haga quilombos en presencia de cajas flotantes	*/
+	content: "";
+	display: table;
+	clear: both;
+}
+header .logo {
+	width: 123px;
+	height: 48px;
+	margin: 10px;
+	float: left;
+	background-image: url('../img/logo.jpg');
+	background-position: center;
+	background-size: cover;
+}
+header ul {list-style-type: none;float: right;}
+header ul:hover {
+	-webkit-filter: blur(100%); /* Safari 6.0 - 9.0 */
+    filter: blur(100%);
+}
+header ul li {
+	display: inline-block;
+	font-family: PalanquinR;
+	font-size: 26px;
+	padding: 10px;
+}
+header ul li a {
+	cursor: pointer;
+	text-decoration: none;
+	color: #52c37a;
+	border-bottom: 3px solid #fff;
+}
+header ul li a:hover {
+	color: #6acd8d;
+	border-bottom: 3px solid #6acd8d;
+}
+/*	La portada que aparece en la página principal, y se refiere únicamente al último
+	post creado (no necesariamente el más importante) */
+#superPortada {
+	width: 100%;
+	height: 500px;
+	margin-top: 48px;
+	background-position: center;
+	background-size: 90%;
+	background-image: url('../img/post/la-big-data-como-manejan-nuestros-datos/superPortada.jpg');
+	margin-bottom: 10px;
+}
+#superPortada:hover {
+	background-size: 100%;
+}
+	/* El estilo para: título y sinopsis */
+	#superPortada .titulo {
+		width: 33.33%;
+		padding: 5px;
+		position: relative;
+		top: 30px;
+		left: 0;
+		background-color: #6ccc8d;
+		font-family: PalanquinR;
+		font-size: 26px;
+		opacity: .9;
+		cursor: default;
+	}
+	#superPortada .sinopsis {
+		width: 33.33%;
+		padding: 5px;
+		position: relative;
+		top: 30px;
+		left: 0;
+		background-color: #6bccb6;
+		font-family: PalanquinR;
+		font-size: 18px;
+		opacity: .8;
+		cursor: default;
+	}
+/* La web va a tener una reducción al 70% para mejorar la lectura */
+#contenido {
+	width: 70%;
+	margin: 0 auto;
+}
+#columnaIzq a {border: none;} /* Anulo el border-bottom que hereda de la etiqueta a "padre" (sólo columna izquierda) */
+/*	Ahora, columna izquierda con recomendaciones. Se suma la central (calendario+mail de contacto) y la derecha (posts mejor votados) */
+#columnaIzq, #columnaCen, #columnaDer {
+	width: 32.66%;
+	margin: 0.3333333333%;
+	float: left;
+}
+#columnaIzq .titulo {
+	width: 96%;
+	padding: 2%;
+	text-align: center;
+	background-color: #5b75bf;
+	border: 2px solid #8772bf;
+	margin: 0 auto 10px auto;
+	font-family: PalanquinT;
+	font-size: 20px;
+}
+#columnaIzq ul {list-style-type: none;}
+#columnaIzq ul li {
+	padding: 2%;
+	text-align: center;
+	float: left;
+	background-color: #f5897d;
+	border: 2px solid #f0657c;
+	margin: 0 10px 10px 0;
+	font-family: PalanquinT;
+	font-size: 18px;
+}
+#columnaIzq ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+#columnaIzq ul li a:hover {
+	color: #212121;
+}
+#columnaIzq .sosNoticia {
+	padding: 2%;
+	text-align: center;
+	float: left;
+	background-color: #f9f182;
+	border: 2px solid #f5dd7d;
+	margin: 0 10px 10px 0;
+}
+#columnaIzq .sosNoticia a {color: #4e4e4e;}
+#columnaIzq .sosNoticia a:hover {color: #212121;}
+/*	Columna central con fechas e invitación al contacto */
+#columnaCen .titulo {
+	width: 96%;
+	padding: 2%;
+	text-align: center;
+	background-color: #52c37a;
+	border: 2px solid #6acd8d;
+	margin: 0 auto;
+	font-family: PalanquinT;
+	font-size: 20px;
+}
+#columnaCen ul {padding: 20px;}
+#columnaCen ul li {
+	color: #262626;
+	cursor: default;
+	margin-bottom: 20px;
+	line-height: 30px;
+	font-family: PalanquinT;
+	font-size: 18px;
+}
+#columnaCen ul li:hover {
+	color: #212121;
+}
+/*	Columna derecha, para listar mejores posts */
+#columnaDer .titulo {
+	width: 96%;
+	padding: 2%;
+	text-align: center;
+	background-color: #596a7e;
+	border: 2px solid #70869f;
+	color: #fff;
+	margin: 0 auto;
+	font-family: PalanquinT;
+	font-size: 20px;
+}
+#columnaDer ul {padding: 20px;}
+#columnaDer ul li {
+	width: 100%;
+	margin-bottom: 20px;
+}
+#columnaDer .tituloPost {
+	font-family: PalanquinT;
+	font-size: 18px;
+	color: #232323;
+}

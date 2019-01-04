@@ -1,0 +1,55 @@
+<!--
+Calendario v0.1 :: Santiago A. Gimenez 
+-------------------------------------------
+Hay un <div> por cada mes, y allí mismo se carga cada día,
+premarcado con HTML.
+Si alguna fecha dentro del mes está marcada como "evento",
+tendrá un link para abrir en detalle ese día y saber de
+que va a tratar. Esta función se hará creando los días con
+PHP previamente desde el panel de administración ;)
+Bueno... ¡que comiencen los juegos del hambre! A programar c:
+-->
+<head>
+<link rel="stylesheet" href="../css/calendario.css" />
+</head>
+<body>
+
+<a href="#enero">111111111Enero</a>
+
+<div id="enero">
+
+ <div class="mes">
+  <ul>
+    <li>Agosto<br><span>2017</span></li>
+  </ul>
+</div>
+
+<ul class="dias">
+  <li>Lunes</li>
+  <li>Martes</li>
+  <li>Miercoles</li>
+  <li>Jueves</li>
+  <li>Viernes</li>
+  <li>Sábado</li>
+  <li>Domingo</li>
+</ul>
+
+<ul class="numeros">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>11</li>
+
+</ul> 
+
+</div>
+
+</body>

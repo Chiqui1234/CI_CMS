@@ -1,0 +1,164 @@
+* {
+	padding: 0;
+	margin: 0;
+	cursor: default;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+#calendario ul li:hover {
+	color: #212121;
+}
+#calendario-empotrable {
+	/* Para encerrar todo el calendario dentro de una única caja, más maleable */
+	width: 100%;
+	clear: both;
+	margin: 10px auto;
+}
+#calendario-empotrable .mes {
+	 width: 100%;
+    padding: 10px 0 5px 0;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#calendario-empotrable .mes ul li {
+	color: #000;
+	text-shadow: 0 0 3px #fff;
+}
+#calendario-empotrable .dias {
+	 width: 100%;
+	 padding: 0;
+    background-color:#eee;
+}
+#calendario-empotrable .dias li {
+    display: inline-block;
+    width: 13%;
+    color: #666;
+    text-align: center;
+    font-size: 13px;
+}
+#calendario-empotrable .numeros li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13%;
+    text-align: center;
+    font-size:12px;
+    color: #777;
+}
+.minimo {color: #a9a9a9;}
+/* mes header */
+.mes {
+    width: 100%;
+    padding: 30px 0 30px 0;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* mes list */
+#calendario ul, #calendario-empotrable .mes ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#calendario .mes ul li, #calendario-empotrable .mes ul li {
+    font-size: 20px;
+    font-family: PalanquinT, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside mes header */
+#calendario .mes .prev, #calendario-empotrable .mes .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+#calendario .mes .next, #calendario-empotrable .mes .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* dias (Mon-Sun) */
+#calendario .dias {
+    width: 100%;
+    padding: 10px 0 10px 0;
+    background-color:#ddd;
+    
+}
+
+#calendario .dias li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* numeros (1-31) */
+#calendario .numeros, #calendario-empotrable .numeros {
+	 width: 100%;   
+    padding: 10px 0 10px 0;
+}
+
+#calendario .numeros li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size:14px;
+    color: #777;
+}
+/* Highlight the "current" day */
+.numeros li .target {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+/**/
+/* Estas propiedades son para el helper lateral */
+#enero, #febrero, #marzo, #abril, #mayo, #junio, #julio, #agosto, #septiembre, #octubre, #noviembre, #diciembre {
+	width: 40%;
+	height: 100%;
+	position: fixed;
+	left: -40%;
+	top: 0;
+	box-shadow: 0 0 8px #212121;
+	background: #eee;
+	z-index: 100;
+}
+#enero:target, #febrero:target, #marzo:target, #abril:target, #mayo:target, #junio:target, #julio:target, #agosto:target, #septiembre:target, #octubre:target, #noviembre:target, #diciembre:target {
+	left: 0;
+}
+#cerrar {
+	width: 24px;
+	height: 24px;
+	font-size: 24px;
+	line-height: 20px;
+	text-align: center;
+	clear: both;
+	font-family: PalanquinR, sans-serif;
+	float: right;
+	background-color: #000;
+}
+#cerrar a {color: #fff;border: none;text-decoration: none;}
+/*  */
+@media only screen and (max-width: 600px) {
+    #calendario .dias li {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    #enero, #febrero, #marzo, #abril, #mayo, #junio, #julio, #agosto, #septiembre, #octubre, #noviembre, #diciembre {
+        width: 95%;
+        left: -95%;
+    }
+    #calendario .dias li {
+        font-size: 14px;
+    }
+}

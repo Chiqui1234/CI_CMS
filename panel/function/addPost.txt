@@ -1,0 +1,2 @@
+addPost() function is in /plug-in/blog
+Why? The "blog" module isn't standard in this CMS :P

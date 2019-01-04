@@ -1,0 +1,65 @@
+/*	"Centrado" es independiente, facilita la lectura con width=70% */
+#centrado {
+	width: 70%;
+	margin: 0 auto;
+	content: "";
+	clear: both;
+	display: table;
+}
+/*	Contenido	*/
+#contenido { /* Sólo para la portada, que se complementa con el 20% de la Sidebar */
+	width: 80%;
+	float: left;
+}
+#portada {
+	width: 100%;
+	margin-top: 55px;
+	content: "";
+	display: table;
+	margin-bottom: 10px;
+}
+#separador {
+	width: 100%;
+	margin: 5px 0 5px 0;
+	padding-left: 10px;
+	border-left: 5px solid #5b75bf;
+	display: table;
+	content: "";
+	clear: both;
+}
+#separador .texto {
+	width: 50%;
+	float: left;
+	font-family: Halogen;
+	font-size: 32px;
+}
+/*	El contenido posta	*/
+#navContenido {
+	width: 100%;
+	margin-top: 20px;
+	background-color: #fff;
+}
+#contenido #navContenido ul li {
+	display: inline;
+	font-family: Source;
+	font-size: 20px;
+	margin-right: 10px;
+}
+#contenido #navContenido ul li a {
+	border-bottom: 5px solid #fff;
+	text-decoration: none;
+	color: #292929;
+}
+#contenido #navContenido ul li a:hover {
+	border-bottom: 5px solid <?php echo $linkHover; ?>;
+}
+#contenido #navContenido ul li a:active {
+	border-bottom: 5px solid <?php echo $linkColor; ?>;
+}
+
+@media only screen and (max-width: 801px) {
+    #contenido {
+		width: 100%;
+		clear: both;
+	}
+}

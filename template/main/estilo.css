@@ -1,0 +1,76 @@
+:root {
+	--linkColorHeader = #fff;
+	--linkColor = #5b75bf; /* Linkeado: presente en todas las páginas */
+	--linkHover = #9172bf; /* Linkeado: presente en todas las páginas */
+	--searchText = #292929; /* Linkeado: presente en todas las páginas */
+	--background = red; /* Linkeado: presente en todas las páginas */
+}
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Roboto;
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+	font-family: Roboto;
+}
+*:before,
+*:after {
+	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.preOculto {} /* Sirve para marcar cosas que quiero ocultar completamente cuándo se está viendo desde un móvil */
+@font-face {
+    font-family: Halogen; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/halogen.otf');
+}
+@font-face {
+    font-family: Nikoleta; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/nikoleta.ttf');
+}
+@font-face {
+    font-family: Jaime; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/jaime.ttf');
+}
+@font-face {
+    font-family: Source; /* Para títulos h1, h2, h3, h4, h5 y h6 */
+    src: url('font/SourceSansPro-Light.ttf');
+}
+@font-face {
+	font-family: Roboto; /* Para párrafos y listas */
+	src: url('font/Roboto-Regular.ttf');
+}
+/**/
+h1, h2, h3, h4, h5, h6 {font-family: Source;color: #000;}
+p, ul, ol {line-height: 30px;font-family: Roboto;color: #252525;font-size: 15px;}
+a {
+	color: var(--linkColor);
+	text-decoration: none;
+	border-bottom: 2px solid var(--linkColor);
+	padding-bottom: 2px;
+	cursor: pointer;
+}
+a:hover {
+	color: var(--linkHover);
+	border-bottom: 2px solid var(--linkHover);
+}
+/**/
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background-color: var(--background);
+	/* Para evitar que haga quilombos en presencia de cajas flotantes	*/
+	content: "";
+	display: table;
+	clear: both;
+}
+@media only screen and (max-width: 801px) {
+    .preOculto {
+		display: none;
+	}
+}

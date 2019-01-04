@@ -1,0 +1,1 @@
+<?php echo 'No tenés posts de tu autoría.'; ?>

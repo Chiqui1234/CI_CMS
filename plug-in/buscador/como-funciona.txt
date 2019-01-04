@@ -1,0 +1,15 @@
+Por cada post creado en este internal, se genera un archivo en formato PHP correspondiente dentro
+de /plug-in/buscador/lista. Este archivo acatará la plantilla siguiente (o alguna otra, pero
+deberá estar dentro de una lista desordenada):
+<li><?php $tags = array("xxxxx", "xxx", "xxx2", "xxx"); ?>
+    <div id="parrafo"><div id="titulo">XXXXX</div>
+    <div id="descripcion">Hasta 250 caracteres</div></div>
+    <div id="imagen" style="background-image:url('../../img/entrada/xxxxx.jpg');"></div>
+    <div id="link">Leer más</div>
+</li>
+
+¿Cómo funciona el buscador?
+Se importa todos las entradas y compara la variable $tags. Si obtiene N/2+1 coincidencias, lo
+tiene en cuenta para el listado. Al conseguir 5 resultados, la bandera se activa y acaba con la
+búsqueda.
+Siendo N, la cantidad de tags (en el ejemplo hay cuatro).

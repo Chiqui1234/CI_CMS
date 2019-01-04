@@ -1,0 +1,24 @@
+#left {
+	width: 49%;
+	float: left;
+}
+#contenido ul {list-style-type: none;}
+#contenido ul li {
+	width: 50%;
+	float: left;
+}
+#left .titulo {
+	font-family: PalanquinT;
+	font-size: 22px;
+	padding: 10px 10px 5px 10px;
+}
+#left .descripcion {
+	font-family: Roboto;
+	font-size: 14px;
+	padding: 5px 10px 10px 10px;
+}
+#right {
+	width: 49%;
+	float: right;
+}
+#right p {padding: 10px;}

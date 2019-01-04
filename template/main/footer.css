@@ -1,0 +1,71 @@
+/*	Footer	*/
+footer {
+	width: 100%;
+	padding: 20px;
+	clear: both;
+	content: "";
+	display: table;
+}
+footer #izquierda {
+	float: left;
+	width: 50%;
+	font-family: Source;
+	padding-top:18px;
+	font-size: 18px;
+}
+footer #subscribirse {
+	float: right;
+	width: 50%;
+}
+footer #subscribirse .formulario {
+	width: 100%;
+	padding: 5px;
+	border-radius: 30px;
+	border: 1px solid <?php echo $linkColor; ?>;
+	content: "";
+	display: table;
+}
+footer #subscribirse #textForm {
+	float: left;
+	width: 85%;
+	padding: 10px;
+	border: none;
+	outline: none;
+	font-family: Source;
+	font-size: 15px;
+}
+footer #subscribirse #enviar {
+	border-radius: 30px;
+	background-color: rgb(114, 61, 238);
+	color: #fff;
+	font-family: Source;
+	font-size: 15px;
+	float: right;
+	padding: 10px;
+	width: 15%;
+}
+@media only screen and (max-width: 601px) {
+	footer #izquierda {
+		font-size: 13px;
+	}
+}
+@media only screen and (max-width: 801px) {
+	footer #izquierda {
+		width: 100%;
+		clear: both;
+		text-align: center;
+	}
+	footer #subscribirse {
+		width: 100%;
+		margin-top: 20px;
+		clear: both;
+	}
+    footer #subscribirse #enviar {
+		width: 30%;
+        font-size: 14px;
+	}
+	footer #subscribirse #textForm {
+		width: 70%;
+		font-family: 14px;
+	}
+}

@@ -1,7 +1,7 @@
 <?php include_once("../template/main/include/style.php"); ?>
 <div class="box mainMultimedia">
     <div class="column">
-        <p>Colocá el código HTML del video o imágen que querés que aparezca al principio del tema. Tu código anterior era:</p>
+        <p>Colocá el código HTML del video o imágen que aparecerá en la portada. Tu código anterior era:</p>
         <textarea id="old"><?php include_once("../template/main/include/mainMultimedia.php"); ?></textarea>
     </div>
 

@@ -40,14 +40,16 @@
 		</div>-->
 
 		<div class="box dashed">
-			<p>¡Bienvenido, <?php echo $aliasUsuario; ?>!</p>
+			<h1>¡Bienvenido, <?php echo $aliasUsuario; ?>!</h1>
 			<p>CI_CMS Versión <?php echo $version; ?></p>
-			<p>¡Versión actualizada!</p>
+			<p><strong>¡Versión actualizada!</strong></p>
 		</div>
 
 		
 			<?php include_once("include/users.php"); ?> <!-- Ya hay un "box users" dentro de este archivo -->
-			<?php include_once("include/posts.php"); ?> <!-- Ya hay un "box users" dentro de este archivo -->
+			<?php include_once("include/posts.php"); ?> <!-- Ya hay un "box posts" dentro de este archivo -->
+			<?php include_once("../template/main/configuration/mainMultimedia.php"); ?> <!-- Ya hay un "box" dentro de este archivo | Archivo para configurar la portada del template -->
+			<?php include_once("../template/main/configuration/footer.php"); ?> <!-- Ya hay un "box" dentro de este archivo | Archivo para configurar el footer del template -->
 		
 	<?php 
 	 } // Cierre if($rank < 2)

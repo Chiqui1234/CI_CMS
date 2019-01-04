@@ -15,12 +15,12 @@
 ?>
 
 <!-- Header / Menú -->
-<?php include_once("internal/nav.php"); ?>
+<?php include_once("template/main/include/nav.php"); ?>
 
-<?php include_once("internal/sidebar.php"); ?>
+<?php include_once("template/main/include/sidebar.php"); ?>
 
 <div id="contenido">
-  <?php include_once("internal/portada.php"); ?>
+  <?php include_once("template/main/include/mainMultimedia.php"); ?>
 </div>
 
 <!-- Arranca lo bueno -->
@@ -58,7 +58,7 @@
 <!-- </div> Cierre del id=centrado --> 
 
 <!-- Pie de página -->
-<?php include_once("internal/pie.php"); ?>
-<script src="js/video-responsive.js"></script>
+<?php include_once("template/main/include/footer.php"); ?>
+<script src="template/js/video-responsive.js"></script>
 </body>
 </html>

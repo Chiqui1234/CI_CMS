@@ -1,5 +1,9 @@
 <div class="box posts">
         <div class="column">
+        <h3>Crear entrada</h3><br />
+        <!-- La carpeta "mod" incluye únicamente los archivos que llaman a las funciones.
+	    Las funciones de uso exclusivo administrativo (como crear un usuario) permanecen
+	    dentro de la carpeta /panel/functions -->
          <form action="mod/addPost.php" method="post">
             <div id="data">
              <div class="column">

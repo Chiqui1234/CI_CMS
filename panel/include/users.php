@@ -1,5 +1,4 @@
 <div class="box users">
-
 	<div class="column">
 	 <!-- La carpeta "mod" incluye únicamente los archivos que llaman a las funciones.
 	 Las funciones de uso exclusivo administrativo (como crear un usuario) permanecen

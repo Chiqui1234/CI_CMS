@@ -1,1 +1,0 @@
-Acá no vamos a usar jQuery jaja. Vamos a usar la cabeza a puro CSS3 ;D

@@ -17,6 +17,6 @@ Tareas pendientes / Tasks (ES)
 - Pulir el sistema de activación de cuentas del usuario.
 - Implementar require_once en lugar de include_once, para las funciones críticas del sistema (las cuáles sería ideal que el script parara si no se está cargando la función correspondiente)
 - Terminar la traducción del sistema al inglés
-- Soporte completo para templates (actualmente: sin soporte salvo el que viene de fábrica. Debo estandarizar nombres de las clases y pensar las políticas de plantillas)
-- Soporte completo para plug-ins (actualmente: parcial)
+- Soporte completo para templates (actualmente: sin soporte salvo el que viene de fábrica. Debo estandarizar nombres de las clases y pensar las políticas de plantillas + facilitar un instalador de templates)
+- Soporte completo para plug-ins (actualmente: parcial. Hay instalador pero debo estandarizar la manera en la que se van a ver en el panel de control + estandarización)
 - Revisar fallos / búsqueda de bugs

@@ -1,1 +1,1 @@
-<?php $contrasenaTokenUsuario=md5("lilolilo10"); ?>
+<?php $contrasenaTokenUsuario=md5("test"); ?>

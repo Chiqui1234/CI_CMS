@@ -10,10 +10,10 @@ $contrasenaToken = md5($end[1]);
 
 $estadoLogin = false;
 $rutaUsuario = locacion()."user/".$end[0];
-include_once(locacion()."function/sesion.php");
+require_once(locacion()."function/sesion.php");
 if(file_exists($rutaUsuario)) {
-	include_once($rutaUsuario."/credenciales.php"); // Dónde tengo a $contrasenaUsuario, para comparar después
-	include_once($rutaUsuario."/contrasena-token.php"); // Dónde tengo a $contrasenaTokenUsuario, que se instancia al crear usuario / editar contraseña del usuario
+	require_once($rutaUsuario."/credenciales.php"); // Dónde tengo a $contrasenaUsuario, para comparar después
+	require_once($rutaUsuario."/contrasena-token.php"); // Dónde tengo a $contrasenaTokenUsuario, que se instancia al crear usuario / editar contraseña del usuario
 	if( $end[1] == $contrasenaUsuario && $contrasenaTokenUsuario == $contrasenaToken ) {
 		$estadoLogin = true;
 		setcookie("emailCookie", $end[0], time() + (86400 * 30), "/"); // 86400 = 1 day
@@ -24,8 +24,10 @@ if(file_exists($rutaUsuario)) {
     	fwrite($tokenRuta, $contrasenaTokenAEscribir);
 		fclose($tokenRuta);
 		//
-		include_once($rutaUsuario."/contrasena-token.php"); // DEBE EXISTIR SIEMPRE
+		require_once($rutaUsuario."/contrasena-token.php"); // DEBE EXISTIR SIEMPRE
 	}
+} else {
+	echo "file_exists() no encontró la ruta del usuario";
 }
 
 ?>
@@ -51,10 +53,10 @@ if(file_exists($rutaUsuario)) {
  		echo "<p>Si tu navegador no te redirige en unos pocos segundos, <a href='../perfil.php'>hacé clic acá</a>.</p>";
 	} else {
 		echo "<p>Revisá tus datos. <br/>DEBUG:</p>";
-		if(chequeoSesionActiva()){
-			echo "<p>El usuario <a href='".$rutaUsuario."'>".$end[0]."</a> existe.</p>";
+		if(isLogIn()){
+			echo "<p>El usuario <a href='".$rutaUsuario."'>".$end[0]."</a> logueó.</p>";
 		} else{
-			echo "<p>El usuario <a href='".$rutaUsuario."'>".$end[0]."</a> no existe.</p>";
+			echo "<p>El usuario <a href='".$rutaUsuario."'>".$end[0]."</a> no está logueado.</p>";
 		}
 		echo "<p>Ruta del usuario: ".$rutaUsuario."</p>";
 		echo "<p>Contraseña usuario: ".$contrasenaUsuario."</p>";

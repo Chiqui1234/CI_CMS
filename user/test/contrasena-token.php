@@ -1,0 +1,1 @@
+<?php $contrasenaTokenUsuario=md5("test1234"); ?>

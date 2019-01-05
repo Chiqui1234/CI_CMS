@@ -1,4 +1,11 @@
-<?php include_once("../../internal/info.php"); ?>
+<?php 
+if(strpos($_SERVER['PHP_SELF'], "panel/mod") || strpos($_SERVER['PHP_SELF'], "panel/function")) {
+    include_once("../../internal/info.php");
+} else if(strpos($_SERVER['PHP_SELF'], "internal")) {
+    include_once("info.php");
+} else {
+    include_once("internal/info.php");
+} ?>
 
 <?php
 include_once(locacion()."function/sesion.php");

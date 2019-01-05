@@ -20,7 +20,7 @@
 <?php include_once("template/main/include/sidebar.php"); ?>
 
 <div id="contenido">
-  <?php include_once("template/main/include/mainMultimedia.php"); ?>
+  <div id="portada"><?php include_once("template/main/include/mainMultimedia.php"); ?></div>
 </div>
 
 <!-- Arranca lo bueno -->
@@ -59,6 +59,6 @@
 
 <!-- Pie de página -->
 <?php include_once("template/main/include/footer.php"); ?>
-<script src="template/js/video-responsive.js"></script>
+<script src="template/main/js/video-responsive.js"></script>
 </body>
 </html>

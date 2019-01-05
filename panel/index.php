@@ -6,13 +6,15 @@
  	<?php include_once("../internal/info.php"); ?>
  	<title><?php echo $nombreDelSitio; ?> | Panel de control</title>
 	<link rel="stylesheet" href="css/panel.css" /> 
+	<link rel="stylesheet" href="../template/main/header.css" />
  	<meta charset="UTF-8" />
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  </head>
 
 <body>
-
-		<!-- Acá se colocan noticias sobre el CMS, un resúmen del internal -->
+<?php //include_once("../template/main/include/nav.php"); ?>
+		
+<!-- Acá se colocan noticias sobre el CMS, un resúmen del internal -->
 <?php 
 	include_once(locacion()."function/sesion.php");
 	if( isLogIn() ) {

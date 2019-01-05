@@ -11,7 +11,7 @@
  </head>
 
 <body>
-<?php include_once("internal/nav.php");
+<?php include_once("template/main/include/nav.php");
 include_once("function/sesion.php");
 if(isLogIn()) {
   include_once("internal/importUser.php");
@@ -25,7 +25,7 @@ if(isLogIn()) {
 		<input type="password" name="contrasena" placeholder="Contraseña" />
 		<input type="submit" name="ingresar" value="Ingresar a infosegura" />
 	</form>
-	<p>¿No tenés cuenta? <a href="internal/registrarme.php">Registrate</a></p><br />
+	<p>¿No tenés cuenta? <a href="registrarme.php">Registrate</a></p><br />
   <p>Si olvidaste tu contraseña, <a href="internal/recuperar-contrasena.php">recuperala acá</a>.</p>
  </div>
 </div>

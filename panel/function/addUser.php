@@ -2,9 +2,10 @@
 
 <?php
 include_once(locacion()."function/sesion.php");
-include_once(locacion()."function/purify.php");
+include_once(locacion()."internal/importUser.php");
+include_once(locacion()."function/purify.php"); // Para el saneamiento de entrada del usuario
 function crearUsuario($alias, $email, $contrasena, $contrasenaRepetida, $rank, $active, $public) {
-if(isLogIn()) {
+if(isLogIn() && $rol==0 || $active==0) { // Si el usuario es Administrador y está logueado, o bien si se va a crear una cuenta inactiva... le damos para adelante
     include_once(locacion()."internal/importUser.php");
   $start = array ($alias, $email, $contrasena, $contrasenaRepetida, $rank, $active, $public);
   $end = sanear($start, 7);

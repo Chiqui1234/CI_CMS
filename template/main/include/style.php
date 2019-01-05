@@ -2,7 +2,13 @@
 :root {
     --borderBoxPanelCustom:  #94cc39 ;
 }
-#root .box.mainMultimedia, #root .box.nav, #root .box.mainMultimedia, #root .box.sidebar, #root .box.footer {
+#root .box.mainMultimedia {
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-gap: 5px;
+    border: 1px solid var(--borderBoxPanelCustom);
+}
+#root .box.nav, #root .box.mainMultimedia, #root .box.sidebar, #root .box.footer {
     grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr;
     grid-gap: 5px;

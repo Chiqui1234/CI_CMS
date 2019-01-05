@@ -11,7 +11,7 @@
 <!-- Tomar este archivo PHP como template para los demás, porque está organizadito <3 -->
 <body>
 
-<?php include_once(locacion()."internal/nav.php"); ?>
+<?php include_once(locacion()."template/main/include/nav.php"); ?>
 
 <div id="centrado" style="margin-top: 52px;">
 <?php	

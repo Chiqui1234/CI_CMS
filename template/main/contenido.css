@@ -1,65 +1,136 @@
-/*	"Centrado" es independiente, facilita la lectura con width=70% */
-#centrado {
-	width: 70%;
-	margin: 0 auto;
-	content: "";
-	clear: both;
-	display: table;
+@font-face {
+    font-family: Halogen; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/halogen.otf');
 }
-/*	Contenido	*/
-#contenido { /* Sólo para la portada, que se complementa con el 20% de la Sidebar */
-	width: 80%;
-	float: left;
+@font-face {
+    font-family: Nikoleta; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/nikoleta.ttf');
 }
-#portada {
-	width: 100%;
-	margin-top: 55px;
-	content: "";
-	display: table;
-	margin-bottom: 10px;
+@font-face {
+    font-family: Jaime; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/jaime.ttf');
 }
-#separador {
-	width: 100%;
-	margin: 5px 0 5px 0;
-	padding-left: 10px;
-	border-left: 5px solid #5b75bf;
-	display: table;
-	content: "";
-	clear: both;
+@font-face {
+    font-family: Source; /* Para títulos h1, h2, h3, h4, h5 y h6 */
+    src: url('font/SourceSansPro-Light.ttf');
 }
-#separador .texto {
-	width: 50%;
-	float: left;
-	font-family: Halogen;
-	font-size: 32px;
-}
-/*	El contenido posta	*/
-#navContenido {
-	width: 100%;
-	margin-top: 20px;
-	background-color: #fff;
-}
-#contenido #navContenido ul li {
-	display: inline;
-	font-family: Source;
-	font-size: 20px;
-	margin-right: 10px;
-}
-#contenido #navContenido ul li a {
-	border-bottom: 5px solid #fff;
-	text-decoration: none;
-	color: #292929;
-}
-#contenido #navContenido ul li a:hover {
-	border-bottom: 5px solid <?php echo $linkHover; ?>;
-}
-#contenido #navContenido ul li a:active {
-	border-bottom: 5px solid <?php echo $linkColor; ?>;
+@font-face {
+	font-family: Roboto; /* Para párrafos y listas */
+	src: url('font/Roboto-Regular.ttf');
 }
 
-@media only screen and (max-width: 801px) {
-    #contenido {
-		width: 100%;
-		clear: both;
-	}
+:root {
+	--background: #f3f3f3;
+	--lightShadow: #aaaaaa;
+	--darkShadow: #292929;
+	--linkColor: #0bb2d4;	
+	--linkHover: #17b3a3;
+	--boxColor: #17b3a3;
+	--buttonColor: #3e8ef7;
+	--buttonHover: #589ffc;
+	--buttonText: #fff;
+	--inputBorder: #3e8ef7;
+	--inputHover: hsl(214, 98%, 68%);
+	--miniBar:  #0bb2d4;
+	--miniHover:  #28c0de;
+}
+* {-webkit-transition: all 200ms ease;-moz-transition: all 200ms ease;-o-transition: all 200ms ease;transition: all 200ms ease;}
+a {
+	color: var(--linkColor);
+	text-decoration: none;
+	border-bottom: 2px solid var(--linkColor);
+	padding-bottom: 2px;
+	cursor: pointer;
+}
+a:hover {
+	color: var(--linkHover);
+	border-bottom: 2px solid var(--linkHover);
+}
+
+body {
+	width: 100%;
+	overflow-x: none;
+	margin: 0;
+	padding: 0;
+	font-family: Roboto;
+	background-color: var(--background);
+}
+#root {
+	margin-top: 55px;
+	display: grid;
+	grid-template-columns: 20% 80%;
+	grid-template-rows: calc(100vh - 55px) 1fr 1fr 1fr;
+	grid-row-gap: 10px;
+}
+/* BARRA SUPERIOR DE NAVEGACIÓN	*/
+#root .nav {
+	grid-column: 1;
+	grid-column-end: 2;
+	background-color: var(--buttonColor);
+}
+/*	SIDEBAR	*/
+#root .sidebar {
+	display: grid;
+	grid-row-gap: 10px;
+	grid-row: 1;
+	grid-template-columns: auto 250px auto;
+	grid-template-rows: 250px 28px 30px auto; /* Una para el avatar, otra para el Nombre, otra para el lema y la última para las redes (con <ul><li>) */ 
+	background-color: var(--background);
+	background-color: var(--background);
+}
+#root .sidebar .avatar {
+	grid-column: 2;
+	grid-row: 1;
+	border-radius: 250px;
+	background-image: url('../../img/avatar/santiagogimenez@outlook.com.ar/home.jpeg');
+	background-size: cover;
+}
+#root .sidebar .title {
+	grid-column: 2;
+	grid-row: 2;
+	font-family: Nikoleta;
+	font-size: 28px;
+	text-align: center
+}
+#root .sidebar .caption {
+	grid-column: 2;
+	grid-row: 3;
+	font-family: Jaime;
+	font-size: 30px;
+	text-align: center;
+}
+#root .sidebar .connect {
+	grid-column: 1 / span 3;
+	grid-row: 4;
+
+}
+#root .sidebar .connect ul {list-style-type: none;}
+#root .sidebar .connect ul li {
+	width: 100%;
+	padding: 10px .5%;
+	clear: both;
+}
+#root .sidebar .connect .logo {
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+	float: left;
+}
+#root .sidebar .connect .logo:hover {
+	box-shadow: 0 0 5px var(--darkShadow);
+}
+#root .sidebar .connect .texto {
+	margin-left: 10px;
+	width: 130px;
+	float: left;
+	color: rgb(131, 131, 131);
+	font-size: 14px;
+	line-height: 25px;
+}
+#root .sidebar .connect .texto span {font-size: 16px;color: #212121;font-variant: small-caps;}
+/*	PORTADA (VIDEO/IMÁGEN)	*/
+#root .portrait {
+	grid-column: 2;
+	grid-row: 1; /* La primer fila es igual a :: calc(100vh - 55px)*/
+	background: red;
 }

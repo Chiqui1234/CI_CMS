@@ -1,62 +1,25 @@
-/*	VARIABLES	*/
 :root {
-	--linkColorHeader: #5b75bf; /* Linkeado: presente en todas las páginas (sólo para header) */
-	--linkColor = #5b75bf; /* Linkeado: presente en todas las páginas */
-	--linkHover = #9172bf; /* Linkeado: presente en todas las páginas */
-	--searchText = #292929; /* Linkeado: presente en todas las páginas */
-	--background = #fff; /* Linkeado: presente en todas las páginas */
+	--background: #f3f3f3;
+	--lightShadow: #aaaaaa;
+	--darkShadow: #292929;
+	--linkColor: #0bb2d4;	
+	--linkHover: #17b3a3;
+	--boxColor: #17b3a3;
+	--buttonColor: #3e8ef7;
+	--buttonHover: #589ffc;
+	--buttonText: #fff;
+	--inputBorder: #3e8ef7;
+	--inputHover: hsl(214, 98%, 68%);
+	--miniBar:  #0bb2d4;
+	--miniHover:  #28c0de;
 }
-
-header {
+#nav {
 	width: 100%;
-	height: 55px;
-	padding: 10px 10px 0 10px;
-	border-radius: 0 0 10px 10px;
-	box-shadow: 0 0 10px #494949;
-	opacity: 0.9;
-    position: fixed;
+	position: fixed;
 	top: 0;
-    left: 0;	
-    display: table;
-    content: "";
+	left: 0;
+	height: 55px;
 	background-color: #fff;
-	z-index: 99;
-}
-header #logo {
-	float: left;
-	font-family: Halogen;
-	font-size: 25px;
-}
-header #logo a {color: var(--linkColorHeader);}
-header #nav {
-	float: left;
-	margin-left: 20px;
-	font-family: Source;
-	font-variant: small-caps;
-} header ul, #sidebar #misRedes ul, #navContenido ul  {list-style-type: none;}
-header ul li {display: inline;font-size: 22px;margin-right: 10px;}
-header ul li a {color: var(--linkColorHeader);border: none;}
-header ul li a:hover {cursor: pointer;border: none;}
-header #busqueda {
-	float: right;
-	margin-right: 10px;
-	width: 230px;
-	height: 30px;
-	outline: none;
-	font-size: 22px;
-} header #busqueda input {outline: none;border: none;background-color: var(--background);}
-header #busqueda input[type=text] {cursor: text;width: 190px;height: 30px;padding: 10px;float: left;var(--background);color: var(--searchText);}
-/*header #busqueda input[type=text]:focus {width: 190px;}*/
-header #busqueda input[type=submit] {width: 30px;height: 30px;float: right;margin-left: 10px;background-color: transparent;background-repeat: no-repeat;background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-512.png');background-size: cover;}
-@media only screen and (max-width: 601px) {
-    header #logo {font-size: 20px;}
-    header ul li {font-size: 19px;}
-}
-@media only screen and (max-width: 801px) {
-	header {height: 85px;} /*La caja que le siga a <header> tiene que tener 85px margin-top */
-	header #busqueda {width: 100%;margin: 1%;clear: both;}
-    header #busqueda input[type=text] {width: 86%;}
-}
-@media only screen and (max-width: 1401px) {
-	
+	box-shadow: 0 0 5px var(--lightShadow);
+	border-radius: 0 0 10px 10px;
 }

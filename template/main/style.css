@@ -1,218 +1,136 @@
 @font-face {
-    font-family: PalanquinR; /* Para el texto del header */
-    src: url('../font/Palanquin-Regular.ttf');
+    font-family: Halogen; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/halogen.otf');
 }
 @font-face {
-    font-family: PalanquinT; /* Para títulos h1, h2, h3, h4, h5 y h6 */
-    src: url('../font/Palanquin-Thin.ttf');
+    font-family: Nikoleta; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/nikoleta.ttf');
 }
-/**/
-h1, h2, h3, h4, h5, h6 {font-family: PalanquinT;}
-p {line-height: 30px;font-family: sans-serif;}
-ul {font-family: sans-serif;}
-* {
-	padding: 0;
-	margin: 0;
-	cursor: default;
-	-webkit-transition: all 400ms ease;
-	-moz-transition: all 400ms ease;
-	-o-transition: all 400ms ease;
-	transition: all 400ms ease;
+@font-face {
+    font-family: Jaime; /* Para la portada y lugares dónde necesite una fuente sofisticada */
+    src: url('font/jaime.ttf');
 }
+@font-face {
+    font-family: Source; /* Para títulos h1, h2, h3, h4, h5 y h6 */
+    src: url('font/SourceSansPro-Light.ttf');
+}
+@font-face {
+	font-family: Roboto; /* Para párrafos y listas */
+	src: url('font/Roboto-Regular.ttf');
+}
+
+:root {
+	--background: #f3f3f3;
+	--lightShadow: #aaaaaa;
+	--darkShadow: #292929;
+	--linkColor: #0bb2d4;	
+	--linkHover: #17b3a3;
+	--boxColor: #17b3a3;
+	--buttonColor: #3e8ef7;
+	--buttonHover: #589ffc;
+	--buttonText: #fff;
+	--inputBorder: #3e8ef7;
+	--inputHover: hsl(214, 98%, 68%);
+	--miniBar:  #0bb2d4;
+	--miniHover:  #28c0de;
+}
+* {-webkit-transition: all 200ms ease;-moz-transition: all 200ms ease;-o-transition: all 200ms ease;transition: all 200ms ease;}
 a {
-	color: #5b75bf;
+	color: var(--linkColor);
 	text-decoration: none;
-	border-bottom: 2px solid #5b75bf;
+	border-bottom: 2px solid var(--linkColor);
 	padding-bottom: 2px;
 	cursor: pointer;
 }
 a:hover {
-	color: #9172bf;
-	border-bottom: 2px solid #9172bf;
+	color: var(--linkHover);
+	border-bottom: 2px solid var(--linkHover);
 }
-/**/
+
 body {
 	width: 100%;
-	overflow-x: hidden;
-	background-color: #fff;
-	/* Para evitar que haga quilombos en presencia de cajas flotantes	*/
-	content: "";
-	display: table;
-	clear: both;
+	overflow-x: none;
+	margin: 0;
+	padding: 0;
+	font-family: Roboto;
+	background-color: var(--background);
 }
-header {
-	width: 100%;
-	background-color: #fff;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 99;
-	/* Para evitar que haga quilombos en presencia de cajas flotantes	*/
-	content: "";
-	display: table;
-	clear: both;
+#root {
+	margin-top: 55px;
+	display: grid;
+	grid-template-columns: 20% 80%;
+	grid-template-rows: calc(100vh - 55px) 1fr 1fr 1fr;
+	grid-row-gap: 10px;
 }
-header .logo {
-	width: 123px;
-	height: 48px;
-	margin: 10px;
-	float: left;
-	background-image: url('../img/logo.jpg');
-	background-position: center;
+/* BARRA SUPERIOR DE NAVEGACIÓN	*/
+#root .nav {
+	grid-column: 1;
+	grid-column-end: 2;
+	background-color: var(--buttonColor);
+}
+/*	SIDEBAR	*/
+#root .sidebar {
+	display: grid;
+	grid-row-gap: 10px;
+	grid-row: 1;
+	grid-template-columns: auto 250px auto;
+	grid-template-rows: 250px 28px 30px auto; /* Una para el avatar, otra para el Nombre, otra para el lema y la última para las redes (con <ul><li>) */ 
+	background-color: var(--background);
+	background-color: var(--background);
+}
+#root .sidebar .avatar {
+	grid-column: 2;
+	grid-row: 1;
+	border-radius: 250px;
+	background-image: url('../../img/avatar/santiagogimenez@outlook.com.ar/home.jpeg');
 	background-size: cover;
 }
-header ul {list-style-type: none;float: right;}
-header ul:hover {
-	-webkit-filter: blur(100%); /* Safari 6.0 - 9.0 */
-    filter: blur(100%);
+#root .sidebar .title {
+	grid-column: 2;
+	grid-row: 2;
+	font-family: Nikoleta;
+	font-size: 28px;
+	text-align: center
 }
-header ul li {
-	display: inline-block;
-	font-family: PalanquinR;
-	font-size: 26px;
-	padding: 10px;
+#root .sidebar .caption {
+	grid-column: 2;
+	grid-row: 3;
+	font-family: Jaime;
+	font-size: 30px;
+	text-align: center;
 }
-header ul li a {
-	cursor: pointer;
-	text-decoration: none;
-	color: #52c37a;
-	border-bottom: 3px solid #fff;
+#root .sidebar .connect {
+	grid-column: 1 / span 3;
+	grid-row: 4;
+
 }
-header ul li a:hover {
-	color: #6acd8d;
-	border-bottom: 3px solid #6acd8d;
-}
-/*	La portada que aparece en la página principal, y se refiere únicamente al último
-	post creado (no necesariamente el más importante) */
-#superPortada {
+#root .sidebar .connect ul {list-style-type: none;}
+#root .sidebar .connect ul li {
 	width: 100%;
-	height: 500px;
-	margin-top: 48px;
-	background-position: center;
-	background-size: 90%;
-	background-image: url('../img/post/la-big-data-como-manejan-nuestros-datos/superPortada.jpg');
-	margin-bottom: 10px;
+	padding: 10px .5%;
+	clear: both;
 }
-#superPortada:hover {
-	background-size: 100%;
-}
-	/* El estilo para: título y sinopsis */
-	#superPortada .titulo {
-		width: 33.33%;
-		padding: 5px;
-		position: relative;
-		top: 30px;
-		left: 0;
-		background-color: #6ccc8d;
-		font-family: PalanquinR;
-		font-size: 26px;
-		opacity: .9;
-		cursor: default;
-	}
-	#superPortada .sinopsis {
-		width: 33.33%;
-		padding: 5px;
-		position: relative;
-		top: 30px;
-		left: 0;
-		background-color: #6bccb6;
-		font-family: PalanquinR;
-		font-size: 18px;
-		opacity: .8;
-		cursor: default;
-	}
-/* La web va a tener una reducción al 70% para mejorar la lectura */
-#contenido {
-	width: 70%;
-	margin: 0 auto;
-}
-#columnaIzq a {border: none;} /* Anulo el border-bottom que hereda de la etiqueta a "padre" (sólo columna izquierda) */
-/*	Ahora, columna izquierda con recomendaciones. Se suma la central (calendario+mail de contacto) y la derecha (posts mejor votados) */
-#columnaIzq, #columnaCen, #columnaDer {
-	width: 32.66%;
-	margin: 0.3333333333%;
+#root .sidebar .connect .logo {
+	width: 50px;
+	height: 50px;
+	background-size: cover;
 	float: left;
 }
-#columnaIzq .titulo {
-	width: 96%;
-	padding: 2%;
-	text-align: center;
-	background-color: #5b75bf;
-	border: 2px solid #8772bf;
-	margin: 0 auto 10px auto;
-	font-family: PalanquinT;
-	font-size: 20px;
+#root .sidebar .connect .logo:hover {
+	box-shadow: 0 0 5px var(--darkShadow);
 }
-#columnaIzq ul {list-style-type: none;}
-#columnaIzq ul li {
-	padding: 2%;
-	text-align: center;
+#root .sidebar .connect .texto {
+	margin-left: 10px;
+	width: 130px;
 	float: left;
-	background-color: #f5897d;
-	border: 2px solid #f0657c;
-	margin: 0 10px 10px 0;
-	font-family: PalanquinT;
-	font-size: 18px;
+	color: rgb(131, 131, 131);
+	font-size: 14px;
+	line-height: 25px;
 }
-#columnaIzq ul li a {
-	color: #fff;
-	text-decoration: none;
-}
-#columnaIzq ul li a:hover {
-	color: #212121;
-}
-#columnaIzq .sosNoticia {
-	padding: 2%;
-	text-align: center;
-	float: left;
-	background-color: #f9f182;
-	border: 2px solid #f5dd7d;
-	margin: 0 10px 10px 0;
-}
-#columnaIzq .sosNoticia a {color: #4e4e4e;}
-#columnaIzq .sosNoticia a:hover {color: #212121;}
-/*	Columna central con fechas e invitación al contacto */
-#columnaCen .titulo {
-	width: 96%;
-	padding: 2%;
-	text-align: center;
-	background-color: #52c37a;
-	border: 2px solid #6acd8d;
-	margin: 0 auto;
-	font-family: PalanquinT;
-	font-size: 20px;
-}
-#columnaCen ul {padding: 20px;}
-#columnaCen ul li {
-	color: #262626;
-	cursor: default;
-	margin-bottom: 20px;
-	line-height: 30px;
-	font-family: PalanquinT;
-	font-size: 18px;
-}
-#columnaCen ul li:hover {
-	color: #212121;
-}
-/*	Columna derecha, para listar mejores posts */
-#columnaDer .titulo {
-	width: 96%;
-	padding: 2%;
-	text-align: center;
-	background-color: #596a7e;
-	border: 2px solid #70869f;
-	color: #fff;
-	margin: 0 auto;
-	font-family: PalanquinT;
-	font-size: 20px;
-}
-#columnaDer ul {padding: 20px;}
-#columnaDer ul li {
-	width: 100%;
-	margin-bottom: 20px;
-}
-#columnaDer .tituloPost {
-	font-family: PalanquinT;
-	font-size: 18px;
-	color: #232323;
+#root .sidebar .connect .texto span {font-size: 16px;color: #212121;font-variant: small-caps;}
+/*	PORTADA (VIDEO/IMÁGEN)	*/
+#root .portrait {
+	grid-column: 2;
+	grid-row: 1; /* La primer fila es igual a :: calc(100vh - 55px)*/
+	background: red;
 }

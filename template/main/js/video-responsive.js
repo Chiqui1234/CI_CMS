@@ -1,13 +1,13 @@
 function responsiveHeight(x) {
     if(x.matches){
-        document.getElementById("sidebar").style.height = (window.innerHeight-85) + "px";
-        document.getElementById("video").style.height = (window.innerHeight-85) + "px";
-        document.getElementById("portada").style.height = (window.innerHeight-85) + "px";
+        document.getElementById("root").style.height = (window.innerHeight-85) + "px 1fr 1fr 1fr";
+        document.getElementByClass("portrait").style.gridTemplateRows = (window.innerHeight-85) + "px 1fr 1fr 1fr";
+        document.getElementByClass("video").style.height = (window.innerHeight-85) + "px 1fr 1fr 1fr";
         //alert("Esta pantalla es de móvil | max-width: 1025px")
     } else {
-        document.getElementById("sidebar").style.height = (window.innerHeight-55) + "px";
-        document.getElementById("portada").style.height = (window.innerHeight-55) + "px";
-        document.getElementById("video").style.height = (window.innerHeight-85) + "px";
+        document.getElementById("root").style.height = (window.innerHeight-85) + "px 1fr 1fr 1fr";
+        document.getElementByClass("portrait").style.gridTemplateRows = (window.innerHeight-85) + "px 1fr 1fr 1fr";
+        document.getElementByClass("video").style.gridTemplateRows = (window.innerHeight-85) + "px 1fr 1fr 1fr";
         //alert("Pantalla grande");
     }
 }

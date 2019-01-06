@@ -18,16 +18,22 @@ if(strpos($_SERVER['PHP_SELF'], "panel/mod") || strpos($_SERVER['PHP_SELF'], "pa
 }
 
 function addPost($title, $tag, $portrait, $category, $post) {
+
+    $prohibitedWords = array("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "=", " ", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú");
+    $friendlyTitle = htmlspecialchars(strip_tags(str_replace($prohibitedWords, "", $title))); // Suprimo espacios y caracteres raros del link
+
+    /* $category/$title es igual a: */ $superRoute = "../../".$category."/".$friendlyTitle;
+
+    if(!file_exists($superRoute)) {
     require_once(locacion()."function/purify.php");
 
     $start = array($title, $tag, $portrait, $category, $post); // Saneo los datos
     $end = sanear($start, 5);
-
-    $prohibitedWords = array("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "=", " ", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú");
-    $friendlyTitle = str_replace($prohibitedWords, "", $end[0]); // Suprimo espacios y caracteres raros del link
     
-    /* $category/$title es igual a: */ $superRoute = "../../".$category."/".$friendlyTitle;
     /* Guardo el autor en $category/$title/author.php */ $owner = $_COOKIE["emailCookie"]; // Suele ser el alias del usuario
+        
+        mkdir($superRoute, 0775); /* Antes de crear cualquier archivo, creo su carpeta :D */
+
                                                          $ownerFile = fopen($superRoute."/author.php", "w");
                                                          fwrite($ownerFile, "<?php \$owner = '".$owner."'; ?>");
                                                          fclose($ownerFile); // Ya teniendo el archivo creado y editado, lo cierro
@@ -45,8 +51,18 @@ function addPost($title, $tag, $portrait, $category, $post) {
     require_once("htmlPost.php"); // Importo la función. 
     $htmlPostFinal = htmlPost($end); /* Con la función importada, ahora le paso los valores del creador del post (comúnmente el creador de posts se visualiza desde panel.php y se trae,
     por lo menos, de panel/include/posts.php) y me devuelve el código completo; que almaceno en mi variable $htmlPostFinal. */
+    
+    /* Antes de guardar el archivo, debo convertir las etiquetas a código real */
+    $search = array("[b]", "[/b]", "[i]", "[/i]", "[u]", "[/u]");
+    $replace = array("<strong>", "</strong>", "<i>", "</i>", "<u>", "</u>");
+    $htmlPostFinalReplace = str_replace($search, $replace, $htmlPostFinal);
+
     $htmlPostFile = fopen($superRoute."/index.php", "w"); // Creo el index.php (post) dentro de la carpeta. Esto está bueno porque incluso, nos ahorra el mod_rewrite del .htaccess para tener "URLs amigables"
-    fwrite($htmlPostFile, $htmlPostFinal); // Escribo el post
+    fwrite($htmlPostFile, $htmlPostFinalReplace); // Escribo el post
     fclose($htmlPostFile); // Cierro :D
+    echo '<a href="'.$superRoute.'">$superRoute</a>';
+    } else {
+        echo '<p>El nombre del post ya existe.</p>';
+    }
 }
 ?>

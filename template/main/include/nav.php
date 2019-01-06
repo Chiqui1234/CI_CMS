@@ -1,7 +1,7 @@
 <?php include_once(locacion()."function/sesion.php"); ?>
-<header>
-<div id="logo"><a href="<?php if(strpos($_SERVER['PHP_SELF'], "index.php")){ ?>sobre-mi.php<?php } else { ?>index.php<?php } ?>">CHIQUI'S</a></div> <!-- Tiene que dirigirse a sobre-chiqui.php, cuándo estoy en index.php -->
-	<div id="nav">
+<!--<header>
+<div id="logo"><a href="<?php if(strpos($_SERVER['PHP_SELF'], "index.php")){ ?>sobre-mi.php<?php } else { ?>index.php<?php } ?>">CHIQUI'S</a></div>--> <!-- Tiene que dirigirse a sobre-chiqui.php, cuándo estoy en index.php -->
+	<!--<div id="nav">
 		<ul>
 			<li><a href="<?php locacion(); ?>index.php#reviews" class="preOculto">Reviews</a></li>
 			<li><a href="<?php locacion(); ?>index.php#notasNav" class="preOculto">Notas</a></li>
@@ -28,4 +28,7 @@
 			<input type="submit" value="" />
 		</form>
 	</div>
-</header>
+</header>-->
+<div id="nav">
+<h3>NAVEGACION EN CONSTRUCCION</h3>
+</div>

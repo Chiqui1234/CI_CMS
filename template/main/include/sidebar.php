@@ -1,8 +1,8 @@
-<div id="sidebar">
-  <div id="miAvatar"></div>
-  <div id="miNombre">Santiago Agustín</div>
-  <div id="miLema">Nadie te quita lo bailado</div>
-    <div id="misRedes">
+<div class="sidebar">
+  <div class="avatar"></div>
+  <div class="title">Santiago Agustín</div>
+  <div class="caption">Nadie te quita lo bailado</div>
+    <div class="connect">
       <ul>
         <li><div class="logo" style="background-image:url('template/main/icon/facebook.png');"></div>
             <div class="texto">Me gusta al <br /><span>Facebook</span></div></li>

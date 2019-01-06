@@ -10,8 +10,8 @@ function htmlPost(array $info) { /* $info es un array y contiene: $title, $tag, 
     <html lang="es">
     
      <head>
-         <?php include_once("../../internal/info.php"); /* Bajo dos directorios porque el post está en $category/$title */ ?>
-         <title>'.$info[0].' | '.$nombreDelSitio.'</title>
+         <?php require_once("../../internal/info.php"); /* Bajo dos directorios porque el post está en $category/$title */ ?>
+         <title>'.$info[0].' | <?php echo $nombreDelSitio; ?></title>
          <?php include_once(locacion()."internal/header.php"); ?> <!-- Para insertar estilos CSS -->
          <meta charset="UTF-8" />
          <meta name="viewport" content="width=device-width, initial-scale=1.0">

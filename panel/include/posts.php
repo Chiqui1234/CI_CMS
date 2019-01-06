@@ -9,9 +9,10 @@
              <div class="column">
                  <input type="text" name="title" placeholder="Título del post" />
                  <input type="text" name="tag" placeholder="Tags" />
+                 <input type="text" name="portrait" placeholder="Link de la portada" />
                  <select name="category"><!-- Los valores de este <select> se crean al instalar el plug-in, en base a las categorías que se creen en el instalador -->
-                    <option>Notas</option>
-                    <option>Reviews</option>
+                    <option>notas</option>
+                    <option>reviews</option>
                  </select>
              </div>
 
@@ -29,7 +30,7 @@
                     <li><a href="#" onclick="addSub()"><u>s</u></a></li>
                 </ul>
             </div>
-            <textarea id="text"></textarea>
+            <textarea name="post" id="text"></textarea>
             <script>
             function addBold() {
                 document.getElementById("text").value += "[b][/b]";

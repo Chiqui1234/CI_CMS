@@ -1,2 +1,7 @@
 addPost() function is in /plug-in/blog
 Why? The "blog" module isn't standard in this CMS :P
+So, the function addPost.php it might be in /plug-in/function/addPost.php
+
+ATENTION: if you're creating a post in /panel directory as admin/author, you need
+to call /panel/mod/addPost.php (from the index.php) which will call addPost()
+function in /plug-in/function/addPost.php

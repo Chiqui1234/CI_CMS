@@ -1,16 +1,17 @@
 <?php 
 if(strpos($_SERVER['PHP_SELF'], "panel/mod") || strpos($_SERVER['PHP_SELF'], "panel/function")) {
-    include_once("../../internal/info.php");
+    require_once("../../internal/info.php");
 } else if(strpos($_SERVER['PHP_SELF'], "internal")) {
-    include_once("info.php");
+    require_once("info.php");
 } else {
-    include_once("internal/info.php");
+    require_once("internal/info.php");
 } ?>
 
 <?php
 include_once(locacion()."function/sesion.php");
 include_once(locacion()."internal/importUser.php");
-include_once(locacion()."function/purify.php"); // Para el saneamiento de entrada del usuario
+include_once(locacion()."function/purify.php"); /* Purify (función que sanea cadenas de texto) está en /function
+(en directorio raíz) porque es una función global que se usa para diversas partes del CMS  */
 function crearUsuario($alias, $email, $contrasena, $contrasenaRepetida, $rank, $active, $public) {
 if(isLogIn() && $rol==0 || $active==0) { // Si el usuario es Administrador y está logueado, o bien si se va a crear una cuenta inactiva... le damos para adelante
     include_once(locacion()."internal/importUser.php");

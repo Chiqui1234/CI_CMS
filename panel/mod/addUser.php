@@ -11,29 +11,15 @@
 
 <body>
   <?php include_once("../function/addUser.php");
-  include_once("../../function/purify.php"); /* Purify (función que sanea cadenas de texto) está en /function
-  (en directorio raíz) porque es una función global que se usa para diversas partes del CMS  */
- 
-  $start = array(
-    $_REQUEST["alias"],
-    $_REQUEST["email"],
-    $_REQUEST["contrasena"],
-    $_REQUEST["contrasenaRepetida"],
-    $_REQUEST["active"],
-    $public = 0, // El usuario no es público (por defecto)
-    $_REQUEST["rank"]
-  );
 
-  $end = sanear($start, 7);
-
-	$rutaUsuario = "../usuario/".$end[1]; /* La ruta completa al usuario. Se le puede agregar "credenciales.php"
+	$rutaUsuario = "../usuario/".$_REQUEST["email"]; /* La ruta completa al usuario. Se le puede agregar "credenciales.php"
 	para referirse al archivo que almacena las credenciales del usuario.
 	Tené en cuenta que el usuario tiene archivos de configuración extra,
 	cómo opciones-de-perfil.php y configuracion.php */
-  if( isset($end[1]) && isset($end[2]) && isset($end[3]) && $end[2]===$end[3] && !strpos($end[2], " ") || strlen($end[2]) > 8 ) {
-    if(strpos($end[1], "@outlook") || strpos($end[1], "@gmail") || strpos($end[1], "@yahoo")) {
+  if( isset($_REQUEST["email"]) && isset($_REQUEST["contrasena"]) && isset($_REQUEST["contrasenaRepetida"]) && $_REQUEST["contrasena"]===$_REQUEST["contrasenaRepetida"] && !strpos($_REQUEST["contrasena"], " ") || strlen($_REQUEST["contrasena"]) > 8 ) {
+    if(strpos($_REQUEST["email"], "@outlook") || strpos($_REQUEST["email"], "@gmail") || strpos($_REQUEST["email"], "@yahoo")) {
       
-      crearUsuario($end[0], $end[1], $end[2], $end[3], $end[6], $end[4], $end[5]);
+      crearUsuario($_REQUEST["alias"], $_REQUEST["email"], $_REQUEST["contrasena"], $_REQUEST["contrasenaRepetida"], $_REQUEST["rank"], $_REQUEST["active"], $end[5]);
       // Arranca el ELSE de la validación de servidores de email
       } else {
         echo "<p>Sólo se admiten correos electrónicos de Outlook, Gmail o Yahoo. ¿Estás usando un email de tu empresa? Por favor, nunca utilices esos correos para registrarte en ningún sitio. El uso debe ser exclusivo de la empresa, caso contrario podrías sufrir de:</p>

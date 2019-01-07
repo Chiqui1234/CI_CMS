@@ -14,15 +14,18 @@
     <?php include_once("function/sesion.php");isLogIn(); ?>
 
 <div id="root">
-  <!-- Header / Menú -->
+  <!-- Navegación -->
   <?php include_once("template/main/include/nav.php"); ?>
 
   <?php include_once("template/main/include/sidebar.php"); ?>
   
     <div class="portrait"><?php include_once("template/main/include/mainMultimedia.php"); ?></div>
 
-  <script src="template/main/js/video-responsive.js"></script>
+  <div id="category">Notas</div>
+  <?php include_once("notas/list.php"); ?>
 
+  <div id="category">Reviews</div>
+  <?php include_once("reviews/list.php"); ?>
 </div> <!-- Cierre "root" -->
 </body>
 </html>

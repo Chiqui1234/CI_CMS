@@ -12,11 +12,13 @@ Requeriments to run: only Apache 2 / Nginx (with PHP 7.x module)
 
 Tareas pendientes / Tasks (ES)
 - (TERMINADO) La página "registrarme.php" tiene que ser terminada y utilizar la función crearUsuario(). Actualmente sólo se pueden crear usuarios desde el panel de control (previo login como administrador)
-- La función que crea los posts debe tener en cuenta las categorías para poder clasificar y organizar entradas en distintas páginas (previamente creadas por el usuario)
+- (TERMINADO) La función que crea los posts debe tener en cuenta las categorías para poder clasificar y organizar entradas en distintas páginas (previamente creadas por el usuario)
+::: Falta agregar los posts creados a las listas correspondientes, para verlas en el inicio :D
+- Actualizar la plantilla a CSS-GRID (evitar Javascript por el momento) :: NOTA: Se planea usar React en el plug-in "buscador"
 - Desarrollar "perfil.php", para mostrar el perfil del usuario de manera completa + permitir la edición de su privacidad, email, contraseña, avatar, portada, etc.
 - Pulir el sistema de activación de cuentas del usuario.
-- Implementar require_once en lugar de include_once, para las funciones críticas del sistema (las cuáles sería ideal que el script parara si no se está cargando la función correspondiente)
-- Terminar la traducción del sistema al inglés
+- (TERMINADO) Implementar require_once en lugar de include_once, para las funciones críticas del sistema (las cuáles sería ideal que el script parara si no se está cargando la función correspondiente)
+- (90%) Terminar la traducción del sistema al inglés
 - Soporte completo para templates (actualmente: sin soporte salvo el que viene de fábrica. Debo estandarizar nombres de las clases y pensar las políticas de plantillas + facilitar un instalador de templates)
 - Soporte completo para plug-ins (actualmente: parcial. Hay instalador pero debo estandarizar la manera en la que se van a ver en el panel de control + estandarización)
 - Revisar fallos / búsqueda de bugs

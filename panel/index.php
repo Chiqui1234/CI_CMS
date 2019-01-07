@@ -12,7 +12,8 @@
  </head>
 
 <body>
-<?php //include_once("../template/main/include/nav.php"); ?>
+<!-- Navegación -->
+<?php include_once(locacion()."template/main/include/nav.php"); ?>
 		
 <!-- Acá se colocan noticias sobre el CMS, un resúmen del internal -->
 <?php 

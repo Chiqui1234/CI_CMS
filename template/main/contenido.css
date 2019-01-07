@@ -56,7 +56,6 @@ body {
 	background-color: var(--background);
 }
 #root {
-	margin-top: 55px;
 	display: grid;
 	grid-template-columns: 20% 80%;
 	grid-template-rows: calc(100vh - 55px) 1fr 1fr 1fr;
@@ -102,9 +101,14 @@ body {
 #root .sidebar .connect {
 	grid-column: 1 / span 3;
 	grid-row: 4;
-
 }
-#root .sidebar .connect ul {list-style-type: none;}
+#root .sidebar .connect ul {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 3;
+	grid-gap: 0 10px;
+}
 #root .sidebar .connect ul li {
 	width: 100%;
 	padding: 10px .5%;

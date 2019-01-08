@@ -1,0 +1,1 @@
+<?php $tag0 = ci_cms; ?><?php $tag1 = cms; ?><?php $n=2; ?>

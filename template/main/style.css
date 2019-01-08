@@ -61,80 +61,45 @@ body {
 	grid-template-rows: calc(100vh - 55px) 1fr 1fr 1fr;
 	grid-row-gap: 10px;
 }
-/* BARRA SUPERIOR DE NAVEGACIÓN	*/
-#root .nav {
-	grid-column: 1;
-	grid-column-end: 2;
-	background-color: var(--buttonColor);
-}
-/*	SIDEBAR	*/
-#root .sidebar {
-	display: grid;
-	grid-row-gap: 10px;
-	grid-row: 1;
-	grid-template-columns: auto 250px auto;
-	grid-template-rows: 250px 28px 30px auto; /* Una para el avatar, otra para el Nombre, otra para el lema y la última para las redes (con <ul><li>) */ 
-	background-color: var(--background);
-	background-color: var(--background);
-}
-#root .sidebar .avatar {
-	grid-column: 2;
-	grid-row: 1;
-	border-radius: 250px;
-	background-image: url('../../img/avatar/santiagogimenez@outlook.com.ar/home.jpeg');
-	background-size: cover;
-}
-#root .sidebar .title {
-	grid-column: 2;
-	grid-row: 2;
-	font-family: Nikoleta;
-	font-size: 28px;
-	text-align: center
-}
-#root .sidebar .caption {
-	grid-column: 2;
-	grid-row: 3;
-	font-family: Jaime;
-	font-size: 30px;
-	text-align: center;
-}
-#root .sidebar .connect {
-	grid-column: 1 / span 3;
-	grid-row: 4;
-}
-#root .sidebar .connect ul {
-	list-style-type: none;
-	display: grid;
-	grid-template-columns: 100%;
-	grid-template-rows: 3;
-	grid-gap: 0 10px;
-}
-#root .sidebar .connect ul li {
-	width: 100%;
-	padding: 10px .5%;
-	clear: both;
-}
-#root .sidebar .connect .logo {
-	width: 50px;
-	height: 50px;
-	background-size: cover;
-	float: left;
-}
-#root .sidebar .connect .logo:hover {
-	box-shadow: 0 0 5px var(--darkShadow);
-}
-#root .sidebar .connect .texto {
-	margin-left: 10px;
-	width: 130px;
-	float: left;
-	color: rgb(131, 131, 131);
-	font-size: 14px;
-	line-height: 25px;
-}
-#root .sidebar .connect .texto span {font-size: 16px;color: #212121;font-variant: small-caps;}
+
 /*	PORTADA (VIDEO/IMÁGEN)	*/
 #root .portrait {
 	grid-column: 2;
 	grid-row: 1; /* La primer fila es igual a :: calc(100vh - 55px)*/
-	background: red;
+	background: #000;
+}
+/*	Category	*/
+#category {
+	grid-column: 2;
+	padding-left: 10px;
+	font-family: Halogen;
+	font-size: 28px;
+	border-left: 5px solid var(--linkColor);
+}
+/*	Reviews	*/
+#reviews, #notas {
+	display: grid;
+	grid-column: 2;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: 1fr 1fr; 
+	grid-gap: 10px;
+}
+#reviews ul, #notas ul {list-style-type: none;padding: 0;margin: 0;}
+#reviews ul li, #notas ul li {
+	background-size: cover;
+	background-color: #212121;
+}
+#reviews ul li .title, #notas ul li .title {
+	width: 100%;
+	height: 100%;
+	background-color: var(--linkHover);
+	color: var(--darkShadow);
+}
+@media only screen and (max-width: 961px) {
+	#root .portrait {
+		display: none;
+	}
+	#reviews, #notas {
+		grid-column: 1 / 2;
+	}
 }

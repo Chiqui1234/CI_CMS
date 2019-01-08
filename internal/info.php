@@ -9,7 +9,7 @@ $version = 0.3; // Versión del sitio
   del sitio web.  */
   function locacion() {
    $ruta = $_SERVER['PHP_SELF'];
-    if( strpos($ruta, "panel/mod") || strpos($ruta, "panel/function") || strpos($ruta, "template/main") || strpos($ruta, "notas") || strpos($ruta, "reviews") ) { // "reviews" y "notas" agregado por el creador de páginas
+    if( strpos($ruta, "panel/mod") || strpos($ruta, "panel/function") || strpos($ruta, "panel/mod") || strpos($ruta, "template/main") || strpos($ruta, "notas") || strpos($ruta, "reviews") ) { // "reviews" y "notas" agregado por el creador de páginas
         /* A pesar de que "reviews" y "notas" está un nivel por abajo del directorio raíz, tengamos en cuenta que estas dos carpetas tienen subcarpetas, no archivos. Por eso, info.php es llamado desde la subcarpeta, es
         decir por ejemplo: /notas/BienvenidoaCI_CMS/index.php (se sube dos directorios y estamos en la raíz) */
         return "../../";

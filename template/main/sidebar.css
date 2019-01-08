@@ -1,49 +1,60 @@
 /*	SIDEBAR	*/
-#sidebar {
-    width: 20%;
-    margin-top: 55px;
-	float: left;
+#root .sidebar {
+	display: grid;
+	grid-row-gap: 10px;
+	grid-row: 1;
+	grid-template-columns: auto 250px auto;
+	grid-template-rows: 250px 28px 30px auto; /* Una para el avatar, otra para el Nombre, otra para el lema y la última para las redes (con <ul><li>) */ 
+	background-color: var(--background);
+	background-color: var(--background);
 }
-#sidebar #miAvatar {
-	width: 225px;
-	height: 225px;
-	margin: 10px auto;
-	clear: both;
+#root .sidebar .avatar {
+	grid-column: 2;
+	grid-row: 1;
 	border-radius: 250px;
 	background-image: url('../../img/avatar/santiagogimenez@outlook.com.ar/home.jpeg');
 	background-size: cover;
 }
-#sidebar #miNombre {
-	width: 100%;
-	margin: 10px auto;
+#root .sidebar .title {
+	grid-column: 2;
+	grid-row: 2;
 	font-family: Nikoleta;
 	font-size: 28px;
 	text-align: center
 }
-#sidebar #miLema {
-	width: 100%;
-	margin: 5px auto;
+#root .sidebar .caption {
+	grid-column: 2;
+	grid-row: 3;
 	font-family: Jaime;
 	font-size: 30px;
 	text-align: center;
 }
-#sidebar #misRedes {
-	width: 95%;
-	margin: 10px auto;
-	border-top: 1px solid rgb(206, 206, 206);
+#root .sidebar .connect {
+	grid-column: 1 / span 3;
+	grid-row: 4;
 }
-#sidebar #misRedes ul li {
+#root .sidebar .connect ul {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 3;
+	grid-gap: 0 10px;
+}
+#root .sidebar .connect ul li {
 	width: 100%;
 	padding: 10px .5%;
 	clear: both;
 }
-#sidebar #misRedes .logo {
+#root .sidebar .connect .logo {
 	width: 50px;
 	height: 50px;
 	background-size: cover;
 	float: left;
 }
-#sidebar #misRedes .texto {
+#root .sidebar .connect .logo:hover {
+	box-shadow: 0 0 5px var(--darkShadow);
+}
+#root .sidebar .connect .texto {
 	margin-left: 10px;
 	width: 130px;
 	float: left;
@@ -51,55 +62,9 @@
 	font-size: 14px;
 	line-height: 25px;
 }
-#sidebar #misRedes .texto span {font-size: 16px;color: #212121;font-variant: small-caps;}
-
-@media only screen and (max-width: 801px) {
-    #sidebar {
-        width: 100%;
-        margin-top: 85px;
-		clear: both;
-    }
-    #sidebar #misRedes .logo {
-        width: 50px;
-        height: 50px;
-    }
-    #sidebar #misRedes .texto {
-        margin-left: 10px;
-        width: 130px;
-        font-size: 14px;
-        line-height: 25px;
-    }
-	#sidebar #miAvatar {
-        width: 150px;
-        height: 150px;
-    }
-    #sidebar #miNombre {font-size: 24px;}
-    #sidebar #miLema {font-size: 20px;}
-}
-@media only screen and (max-width: 1025px) {
-    #sidebar #miAvatar {
-        width: 150px;
-        height: 150px;
-    }
-    #sidebar #miNombre {font-size: 24px;}
-    #sidebar #miLema {font-size: 20px;}
-}
-@media only screen and (max-width: 1281px) {
-    #sidebar #miAvatar {
-        width: 150px;
-        height: 150px;
-    }
-    #sidebar #misRedes .logo {
-        width: 36px;
-        height: 36px;
-    }
-    #sidebar #misRedes .texto {
-        width:70px;
-        font-size: 11px;
-        float: left;
-        line-height: 18px;
-    }
-    #sidebar #misRedes .texto span {
-        font-size: 14px;
+#root .sidebar .connect .texto span {font-size: 16px;color: #212121;font-variant: small-caps;}
+@media only screen and (max-width: 961px) {
+	#root .sidebar {
+		grid-column: 1 / 3;
     }
 }

@@ -1,17 +1,21 @@
 <?php
+/*	Esta porción de código sirve para cambiar los dos últimos elementos de la navegación. */
 include_once(locacion()."function/sesion.php");
 $user = "";
 $urlUser = "";
 $urlUserNav = "";
-if( isLogIn() ) {
+if( isLogIn() ) { // Si la sesión está iniciada, el anteúltimo <li> tendrá el nombre de usuario
 	$user = $_COOKIE["emailCookie"];
 	$urlUser = locacion()."user/".$user."/credenciales.php";
 	if(file_exists($urlUser)) {
 		$urlUserNav = "perfil.php";
-	} else {
+	} else { // En caso de que se esté inyectando una cookie o el usuario esté con archivos corruptos
 		$urlUserNav = "error/";
 		$user = "Tu usuario no existe";
 	}
+} else { // Si la sesión no está iniciada, se lleva a la página ingresar.php, para el logIn :D
+	$urlUserNav = "ingresar.php";
+	$user = "Ingresar";
 }
 ?>
 <div class="opener"><a href="#nav"></a></div>

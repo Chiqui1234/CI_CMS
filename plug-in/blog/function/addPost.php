@@ -22,7 +22,7 @@ function addPost($title, $tag, $portrait, $category, $post) {
     $prohibitedWords = array("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "=", " ", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú");
     $friendlyTitle = htmlspecialchars(strip_tags(str_replace($prohibitedWords, "", $title))); // Suprimo espacios y caracteres raros del link
 
-    /* $category/$title es igual a: */ $superRoute = "../../".$category."/".$friendlyTitle;
+    /* $category/$title es igual a: */ $superRoute = locacion().$category."/".$friendlyTitle;
 
     if(!file_exists($superRoute)) {
     require_once(locacion()."function/purify.php");
@@ -60,6 +60,16 @@ function addPost($title, $tag, $portrait, $category, $post) {
     $htmlPostFile = fopen($superRoute."/index.php", "w"); // Creo el index.php (post) dentro de la carpeta. Esto está bueno porque incluso, nos ahorra el mod_rewrite del .htaccess para tener "URLs amigables"
     fwrite($htmlPostFile, $htmlPostFinalReplace); // Escribo el post
     fclose($htmlPostFile); // Cierro :D
+
+                                                          /* Por último, agrego el post al listado */
+                                                          require_once("htmlList.php"); // Importo la función. 
+                                                          $htmlListFinal = htmlList($end, $category."/".$friendlyTitle);
+                                                          $htmlListFile = fopen(locacion().$end[3]."/list.php", "a"); // Acá agrego el post a la lista, siendo $end[3] cualquiera de las categorías disponibles
+                                                          fwrite($htmlListFile, $htmlListFinal);
+                                                          fclose($htmlListFile);
+
+
+
     echo '<a href="'.$superRoute.'">$superRoute</a>';
     } else {
         echo '<p>El nombre del post ya existe.</p>';

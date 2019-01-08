@@ -22,10 +22,13 @@
     <div class="portrait"><?php include_once("template/main/include/mainMultimedia.php"); ?></div>
 
   <div id="category">Notas</div>
-  <?php include_once("notas/list.php"); ?>
+  <div id="notas"><ul><?php include_once("notas/list.php"); ?></ul></div>
 
   <div id="category">Reviews</div>
-  <?php include_once("reviews/list.php"); ?>
+  <div id="reviews">
+    <ul><?php include_once("reviews/list.php"); ?></ul>
+  </div>
+
 </div> <!-- Cierre "root" -->
 </body>
 </html>

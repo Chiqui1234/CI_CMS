@@ -1,6 +1,5 @@
-
-    <li style="background-image:url('https://www.6seconds.org/wp-content/uploads/2015/07/Welcome-beach.jpg');"><a href="notas/BienvenidoaCI_CMS">
-    <div class="title">Bienvenido a CI_CMS</div>
-    <div class="category">En <span>notas</span></div>
+    <li style="background-image:url('https://i.imgur.com/Xx6x1N5.jpg');"><a href="notas/Sobremi">
+    <div class="title">Sobre mi</div>
+    <div class="category">9/1 a las 22:41</div>
     </a></li>
     

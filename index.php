@@ -19,7 +19,7 @@
 
   <?php include_once("template/main/include/sidebar.php"); ?>
   
-    <div class="portrait"><?php include_once("template/main/include/mainMultimedia.php"); ?></div>
+    <div class="mainMultimedia"><?php include_once("template/main/include/mainMultimedia.php"); ?></div>
 
   <div id="category">Notas</div>
   <div id="notas"><ul><?php include_once("notas/list.php"); ?></ul></div>

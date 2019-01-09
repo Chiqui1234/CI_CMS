@@ -21,9 +21,10 @@ function htmlPost(array $info) { /* $info es un array y contiene: $title, $tag, 
     <?php include_once(locacion()."template/main/include/nav.php"); ?>
     
     <div id="root">
-        <div class="portrait" style="background-image:url(\''.$info[2].'\');"></div>
+        <div class="portrait" style="background-image:url(\''.$info[2].'\');">
         <div class="title">'.$info[0].'</div>
-        <div class="author">'.$_COOKIE["emailCookie"].'</div>
+        <div class="author">@'.$_COOKIE["emailCookie"].'</div>
+        </div>
             <div class="post">
                 '.$info[4].'
             </div>

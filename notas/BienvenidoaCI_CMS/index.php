@@ -13,9 +13,11 @@
     <?php include_once(locacion()."template/main/include/nav.php"); ?>
     
     <div id="root">
-        <div class="portrait" style="background-image:url('https://www.6seconds.org/wp-content/uploads/2015/07/Welcome-beach.jpg');"></div>
-        <div class="title">Bienvenido a CI_CMS</div>
-        <div class="author">Chiqui1234</div>
+        <div class="portrait" style="background-image:url('https://www.6seconds.org/wp-content/uploads/2015/07/Welcome-beach.jpg');">
+            <div class="title">Bienvenido a CI_CMS</div>
+            <div class="author">Chiqui1234</div>
+        </div>
+        
             <div class="post">
                 Si podés ver este post, ¡quiere decir que <strong>todo</strong> funcionó bien!
             </div>

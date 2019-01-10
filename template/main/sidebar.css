@@ -45,11 +45,23 @@
 	padding: 10px .5%;
 	clear: both;
 }
-#root .sidebar .connect .logo {
+#root .sidebar .connect .fb, #root .sidebar .connect .tw, #root .sidebar .connect .yt {
 	width: 50px;
 	height: 50px;
 	background-size: cover;
 	float: left;
+}
+#root .sidebar .connect .fb {
+	background-image:url('icon/facebook.svg');
+	fill: #1a68e1 !important;
+}
+#root .sidebar .connect .tw {
+	background-image:url('icon/twitter.svg');
+	fill: #1aa6e1 !important;
+}
+#root .sidebar .connect .yt {
+	background-image:url('icon/youtube.svg');
+	fill: #da2d22 !important;
 }
 #root .sidebar .connect .logo:hover {
 	box-shadow: 0 0 5px var(--darkShadow);
@@ -65,6 +77,6 @@
 #root .sidebar .connect .texto span {font-size: 16px;color: #212121;font-variant: small-caps;}
 @media only screen and (max-width: 961px) {
 	#root .sidebar {
-		grid-column: 1 / 3;
+		grid-column: 1 / span 3;
     }
 }

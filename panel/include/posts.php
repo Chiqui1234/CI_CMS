@@ -1,3 +1,4 @@
+<?php if($rank == 0) { ?>
 <div class="box posts">
         <div class="column">
         <h3>Crear entrada</h3><br />
@@ -45,3 +46,4 @@
          </form>
         </div>
 </div>
+        <?php } ?>

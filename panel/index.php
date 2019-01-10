@@ -6,7 +6,7 @@
  	<?php include_once("../internal/info.php"); ?>
  	<title><?php echo $nombreDelSitio; ?> | Panel de control</title>
 	<link rel="stylesheet" href="css/panel.css" /> 
-	<link rel="stylesheet" href="../template/main/header.css" />
+	<link rel="stylesheet" href="../template/main/nav.css" />
  	<meta charset="UTF-8" />
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  </head>

@@ -149,6 +149,15 @@ body {
 	font-family: Roboto;
 	font-size: 18px;
 }
+/*	PERFIL	*/
+#root #portrait {
+	grid-column: 2 / span 3;
+	display: grid;
+	grid-template-columns: 5% 45% 45% 5%;
+	grid-template-rows: 100vh;
+	background-size: cover;
+	background-position: center;
+}
 @media only screen and (max-width: 961px) {
 	#root .mainMultimedia {
 		display: none;
@@ -168,5 +177,8 @@ body {
 	}
 	#reviews ul li .title, #notas ul li .category {
 		font-size: 18px;
+	}
+	#root #portrait {
+		grid-column: 1 / span 3;
 	}
 }

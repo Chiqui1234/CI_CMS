@@ -15,17 +15,23 @@
 	background-image: url('../../img/avatar/santiagogimenez@outlook.com.ar/home.jpeg');
 	background-size: cover;
 }
-#root .sidebar .title {
-	grid-column: 2;
+#root .sidebar .title {grid-column: 2;}
+#root .sidebar .title, #root .profileSidebar .nickname {
 	grid-row: 2;
 	font-family: Nikoleta;
 	font-size: 28px;
-	text-align: center
+	text-align: center;
+}
+#root .sidebar .caption {grid-column: 2;}
+#root .sidebar .caption, #root .profileSidebar .email {
+	grid-row: 3;
+	font-family: Roboto;
+	font-size: 18px;
+	text-align: center;
 }
 #root .sidebar .caption {
-	grid-column: 2;
-	grid-row: 3;
 	font-family: Jaime;
+	grid-row: 3;
 	font-size: 30px;
 	text-align: center;
 }
@@ -75,8 +81,57 @@
 	line-height: 25px;
 }
 #root .sidebar .connect .texto span {font-size: 16px;color: #212121;font-variant: small-caps;}
+/* PROFILE SIDEBAR */
+#root .profileSidebar {
+	display: grid;
+	grid-row-gap: 10px;
+	grid-row: 1;
+	grid-template-columns: 100%;
+	grid-template-rows: 50px 30px 28px calc(100vh - 50px - 30px - 28px);
+	background-color: var(--background);
+	background-color: var(--background);
+}
+#root .profileSidebar #posts {
+	grid-row: 4;
+}
+#root .profileSidebar #posts ul {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-auto-rows: auto;
+	margin: 0;
+	padding: 0;
+	grid-gap: 10px;
+	overflow-y: auto;
+}
+#root .profileSidebar #posts ul li {
+	grid-column: 1;
+	background-size: cover;
+	background-position: center;
+}
+#root .profileSidebar #posts ul li a {
+	border: none;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 100%;
+	grid-template-rows: 50px 26px 20px 50px;
+	text-align: center;
+}
+#root .profileSidebar #posts ul li .title {
+	width: 100%;
+	font-family: Nikoleta;
+	font-size: 26px;
+	grid-row: 2;
+	text-shadow: 0 0 5px var(--lightShadow);
+}
+#root .profileSidebar #posts ul li .category {
+	width: 100%;
+	grid-row: 3;
+	font-family: Roboto;
+	font-size: 20px;
+	text-shadow: 0 0 5px var(--lightShadow);
+}
 @media only screen and (max-width: 961px) {
-	#root .sidebar {
+	#root .sidebar, #root .profileSidebar {
 		grid-column: 1 / span 3;
-    }
+	}
 }

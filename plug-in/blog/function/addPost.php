@@ -19,7 +19,7 @@ if(strpos($_SERVER['PHP_SELF'], "panel/mod") || strpos($_SERVER['PHP_SELF'], "pa
 
 function addPost($title, $tag, $portrait, $category, $post) {
 
-    $prohibitedWords = array("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "=", " ", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú");
+    $prohibitedWords = array("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "=", " ", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "Ä", "Ë", "Ï", "Ö", "Ü", "ä", "ë", "ï", "ö", "ü");
     $friendlyTitle = htmlspecialchars(strip_tags(str_replace($prohibitedWords, "", $title))); // Suprimo espacios y caracteres raros del link
 
     /* $category/$title es igual a: */ $superRoute = locacion().$category."/".$friendlyTitle;
@@ -53,20 +53,18 @@ function addPost($title, $tag, $portrait, $category, $post) {
     por lo menos, de panel/include/posts.php) y me devuelve el código completo; que almaceno en mi variable $htmlPostFinal. */
     
     /* Antes de guardar el archivo, debo convertir las etiquetas a código real */
-    $search = array("[b]", "[/b]", "[i]", "[/i]", "[u]", "[/u]");
-    $replace = array("<strong>", "</strong>", "<i>", "</i>", "<u>", "</u>");
+    $search = array("[b]", "[/b]", "[i]", "[/i]", "[u]", "[/u]", "[li]", "[/li]");
+    $replace = array("<strong>", "</strong>", "<i>", "</i>", "<u>", "</u>", "<ul><li>", "</li></ul>");
     $htmlPostFinalReplace = str_replace($search, $replace, $htmlPostFinal);
 
     $htmlPostFile = fopen($superRoute."/index.php", "w"); // Creo el index.php (post) dentro de la carpeta. Esto está bueno porque incluso, nos ahorra el mod_rewrite del .htaccess para tener "URLs amigables"
     fwrite($htmlPostFile, $htmlPostFinalReplace); // Escribo el post
     fclose($htmlPostFile); // Cierro :D
-
+                                                          /* Agrego el post al listado del usuario */
+                                                          require("addPostToList.php");
+                                                          addPostToList($end, locacion()."user/".$_COOKIE["emailCookie"]."/mis-posts.php", $friendlyTitle);
                                                           /* Por último, agrego el post al listado */
-                                                          require_once("htmlList.php"); // Importo la función. 
-                                                          $htmlListFinal = htmlList($end, $category."/".$friendlyTitle);
-                                                          $htmlListFile = fopen(locacion().$end[3]."/list.php", "a"); // Acá agrego el post a la lista, siendo $end[3] cualquiera de las categorías disponibles
-                                                          fwrite($htmlListFile, $htmlListFinal);
-                                                          fclose($htmlListFile);
+                                                          addPostToList($end, locacion().$category."/list.php", $friendlyTitle);
 
 
 

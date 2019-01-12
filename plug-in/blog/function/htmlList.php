@@ -5,14 +5,14 @@ function htmlList(array $info, $friendlyRoute) {
     $dateData = getdate(); 
     $day = $dateData["mday"];
     $month = $dateData["mon"];
-    $year = $dateData["year"]
+    $year = $dateData["year"];
     $hours = $dateData["hours"];
     $minutes = $dateData["minutes"];
 
     $template = '
     <li style="background-image:url(\''.$info[2].'\');"><a href="'.$friendlyRoute.'">
     <div class="title">'.$info[0].'</div>
-    <div class="category">'.$day.'/'.$month.'/'.$year.'a las '.$hours.':'.$minutes.'</div>
+    <div class="category">'.$day.'/'.$month.'/'.$year.' a las '.$hours.':'.$minutes.'</div>
     </a></li>
     ';
     

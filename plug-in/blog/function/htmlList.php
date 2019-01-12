@@ -10,7 +10,7 @@ function htmlList(array $info, $friendlyRoute) {
     $minutes = $dateData["minutes"];
 
     $template = '
-    <li style="background-image:url(\''.$info[2].'\');"><a href="'.$friendlyRoute.'">
+    <li style="background-image:url(\''.$info[2].'\');"><a href="'.$friendlyRoute.'" style="color: '.$info[5].';">
     <div class="title">'.$info[0].'</div>
     <div class="category">'.$day.'/'.$month.'/'.$year.' a las '.$hours.':'.$minutes.'</div>
     </a></li>

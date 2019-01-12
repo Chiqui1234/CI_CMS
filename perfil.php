@@ -27,7 +27,7 @@ if(isLogIn()) {
 </div>
 
 
-	<div id="portrait" style="background-image:url('https://i.imgur.com/pLpuOYG.png');">
+	<div id="portrait" style="background-image: url('<?php echo $portadaUsuario; ?>');">
 	 <div class="configuration">
 	 	<div class="theming"><a href="internal/themingUser.php"></a></div>
 		<div class="credentials"><a href="internal/credentials.php"></a></div>

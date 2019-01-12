@@ -84,8 +84,9 @@
 /* PROFILE SIDEBAR */
 #root .profileSidebar {
 	display: grid;
-	grid-row-gap: 10px;
+	grid-column: 1;
 	grid-row: 1;
+	grid-row-gap: 10px;
 	grid-template-columns: 100%;
 	grid-template-rows: 50px 30px 28px calc(100vh - 50px - 30px - 28px);
 	background-color: var(--background);
@@ -109,6 +110,7 @@
 	background-position: center;
 }
 #root .profileSidebar #posts ul li a {
+	background-image: url('styleHack/bg-35.png');
 	border: none;
 	display: grid;
 	grid-gap: 10px;
@@ -133,5 +135,19 @@
 @media only screen and (max-width: 961px) {
 	#root .sidebar, #root .profileSidebar {
 		grid-column: 1 / span 3;
+		grid-template-columns: auto 250px auto;
+		grid-template-rows: 250px 28px 30px auto;
 	}
+	#root .profileSidebar {
+		display: grid;
+		grid-column: 1 / span 3;
+	}
+}
+@media only screen and (max-width: 1281px) {
+	#root .sidebar {
+		grid-template-columns: auto 200px auto;
+		grid-template-rows: 200px 28px 30px auto;
+	}
+	#root .sidebar .title {font-size: 24px;}
+	#root .sidebar .caption {font-size: 28px;}
 }

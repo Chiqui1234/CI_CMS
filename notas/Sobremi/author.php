@@ -1,1 +1,0 @@
-<?php $owner = 'Chiqui1234'; ?>

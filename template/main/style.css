@@ -18,7 +18,31 @@
 	font-family: Roboto; /* Para párrafos y listas */
 	src: url('font/Roboto-Regular.ttf');
 }
-
+p {float: left;}
+.img {
+	width: 300px;
+	height: 300px;
+	background-size: 100%;
+	float: left;
+}
+#circle {
+	float: left;
+	width: 300px;
+	height: 300px;
+	background-size: 100%;
+	background-position: center;
+	  shape-outside: circle(50%);
+	  margin: 10px;
+}
+#rect {
+	float: left;
+	width: 300px;
+	height: 300px;
+	background-size: 100%;
+	background-position: center;
+	shape-outside: inset(300px 300px 300px 300px 10px);
+	margin: 10px;
+}
 :root {
 	--background: #f3f3f3;
 	--lightShadow: #aaaaaa;
@@ -95,6 +119,7 @@ body {
 	background-position: center;
 }
 #reviews ul li a, #notas ul li a {
+	background-image: url('styleHack/bg-35.png');
 	border: none;
 	display: grid;
 	grid-gap: 10px;
@@ -122,29 +147,34 @@ body {
 /*	POSTS	*/
 #root .portrait {
 	display: grid;
-	grid-row-gap: 20px;
 	grid-column: 1 / span 3;
 	grid-row: 1;
-	grid-template-columns: 20px auto 20px;
-	grid-template-rows: auto 38px 32px 10px;
+	grid-template-columns: 100%;
+	grid-template-rows: auto 68px 52px;
 	background-size: cover;
 	background-position: center;
 }
 #root .portrait .title {
 	grid-row: 2;
-	grid-column: 2;
+	grid-column: 1;
 	font-size: 38px;
+	padding: 0 10px 0 10px;
 	font-family: Nikoleta;
+	opacity: 0.8;
+	background-color: var(--linkColor);
 }
 #root .portrait .author {
 	grid-row: 3;
-	grid-column: 2;
+	grid-column: 1;
 	font-size: 32px;
+	padding: 0 10px 0 10px;
 	font-family: Roboto;
+	opacity: 0.8;
+	background-color: var(--linkColor);
 }
 #root .post {
 	padding-left: 10px;
-	border-left: 2px solid var(--linkColor);
+	border-left: 3px solid var(--linkColor);
 	grid-column: 2;
 	font-family: Roboto;
 	font-size: 18px;
@@ -160,7 +190,12 @@ body {
 }
 @media only screen and (max-width: 961px) {
 	#root .mainMultimedia {
-		display: none;
+		grid-column: 1 / span 3;
+		grid-row: 2;
+		background: #000;
+	}
+	#root .mainMultimedia iframe {
+		height: 50vh;
 	}
 	#category {
 		grid-column: 1 / span 3;
@@ -180,5 +215,19 @@ body {
 	}
 	#root #portrait {
 		grid-column: 1 / span 3;
+		grid-row: 2;
+	}
+	#root .portrait {
+		grid-template-rows: auto 48px 32px;
+	}
+	#root .portrait .title {
+		font-size: 26px;
+	}
+	#root .portrait .author {
+		font-size: 18px;
+	}
+	#root .post {
+		grid-column: 1 / span 3;
+		border: none;
 	}
 }

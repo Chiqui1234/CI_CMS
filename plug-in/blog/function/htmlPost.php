@@ -17,13 +17,19 @@ function htmlPost(array $info) { /* $info es un array y contiene: $title, $tag, 
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
      </head>
     <body>
-    
+    <style>
+    :root {
+        --linkColor: '.$info[5].';
+	    --linkHover: '.$info[6].';
+    }
+    </style>
     <?php include_once(locacion()."template/main/include/nav.php"); ?>
     
     <div id="root">
         <div class="portrait" style="background-image:url(\''.$info[2].'\');">
         <div class="title">'.$info[0].'</div>
-        <div class="author">@'.$_COOKIE["emailCookie"].'</div>
+        <?php require_once("author.php"); ?>
+        <div class="author">@<?php echo $owner; ?></div>
         </div>
             <div class="post">
                 '.$info[4].'

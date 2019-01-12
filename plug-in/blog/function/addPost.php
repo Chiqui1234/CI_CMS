@@ -17,7 +17,7 @@ if(strpos($_SERVER['PHP_SELF'], "panel/mod") || strpos($_SERVER['PHP_SELF'], "pa
     require_once("internal/info.php");
 }
 
-function addPost($title, $tag, $portrait, $category, $post) {
+function addPost($title, $tag, $portrait, $category, $post, $color1, $color2) {
 
     $prohibitedWords = array("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "=", " ", "á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "Ä", "Ë", "Ï", "Ö", "Ü", "ä", "ë", "ï", "ö", "ü");
     $friendlyTitle = htmlspecialchars(strip_tags(str_replace($prohibitedWords, "", $title))); // Suprimo espacios y caracteres raros del link
@@ -27,8 +27,8 @@ function addPost($title, $tag, $portrait, $category, $post) {
     if(!file_exists($superRoute)) {
     require_once(locacion()."function/purify.php");
 
-    $start = array($title, $tag, $portrait, $category, $post); // Saneo los datos
-    $end = sanear($start, 5);
+    $start = array($title, $tag, $portrait, $category, $post, $color1, $color2); // Saneo los datos
+    $end = sanear($start, 7);
     
     /* Guardo el autor en $category/$title/author.php */ $owner = $_COOKIE["emailCookie"]; // Suele ser el alias del usuario
         
@@ -53,8 +53,18 @@ function addPost($title, $tag, $portrait, $category, $post) {
     por lo menos, de panel/include/posts.php) y me devuelve el código completo; que almaceno en mi variable $htmlPostFinal. */
     
     /* Antes de guardar el archivo, debo convertir las etiquetas a código real */
-    $search = array("[b]", "[/b]", "[i]", "[/i]", "[u]", "[/u]", "[li]", "[/li]");
-    $replace = array("<strong>", "</strong>", "<i>", "</i>", "<u>", "</u>", "<ul><li>", "</li></ul>");
+    $search = array("[b]", "[/b]",
+    "[i]", "[/i]",
+    "[u]", "[/u]",
+    "[li]", "[/li]",
+    "[circle]", "[/circle]",
+    "[img]", "[/img]"); // Circle y Rect sirven para darle forma a una imágen, para que el párrafo se adapte a él
+    $replace = array("<strong>", "</strong>",
+    "<i>", "</i>",
+    "<u>", "</u>",
+    "<ul><li>", "</li></ul>",
+    "<div id='circle' style='background-image:url(\"", "\");'></div>",
+    "<div id='rect' style='background-image:url(\"", "\");'></div>");
     $htmlPostFinalReplace = str_replace($search, $replace, $htmlPostFinal);
 
     $htmlPostFile = fopen($superRoute."/index.php", "w"); // Creo el index.php (post) dentro de la carpeta. Esto está bueno porque incluso, nos ahorra el mod_rewrite del .htaccess para tener "URLs amigables"

@@ -31,6 +31,8 @@ p {float: left;}
 	height: 300px;
 	background-size: 100%;
 	background-position: center;
+	background-repeat: no-repeat;
+	background-color: var(--linkColor);
 	  shape-outside: circle(50%);
 	  margin: 10px;
 }
@@ -40,6 +42,8 @@ p {float: left;}
 	height: 300px;
 	background-size: 100%;
 	background-position: center;
+	background-repeat: no-repeat;
+	background-color: var(--linkColor);
 	shape-outside: inset(300px 300px 300px 300px 10px);
 	margin: 10px;
 }
@@ -178,6 +182,9 @@ body {
 	grid-column: 2;
 	font-family: Roboto;
 	font-size: 18px;
+}
+#root .post ul {
+	padding-left: 20px;
 }
 /*	PERFIL	*/
 #root #portrait {

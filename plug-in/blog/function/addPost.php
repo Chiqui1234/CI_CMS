@@ -57,12 +57,14 @@ function addPost($title, $tag, $portrait, $category, $post, $color1, $color2) {
     "[i]", "[/i]",
     "[u]", "[/u]",
     "[li]", "[/li]",
+    "[img]", "[/img]",
     "[circle]", "[/circle]",
-    "[img]", "[/img]"); // Circle y Rect sirven para darle forma a una imágen, para que el párrafo se adapte a él
+    "[rect]", "[/rect]"); // Circle y Rect sirven para darle forma a una imágen, para que el párrafo se adapte a él
     $replace = array("<strong>", "</strong>",
     "<i>", "</i>",
     "<u>", "</u>",
     "<ul><li>", "</li></ul>",
+    "<img src='", "' width='100%' />",
     "<div id='circle' style='background-image:url(\"", "\");'></div>",
     "<div id='rect' style='background-image:url(\"", "\");'></div>");
     $htmlPostFinalReplace = str_replace($search, $replace, $htmlPostFinal);

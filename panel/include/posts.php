@@ -10,8 +10,8 @@
              <div class="column">
                  <input type="text" name="title" placeholder="Título del post" />
                  <input type="text" name="tag" placeholder="Tags" />
-                 <input type="text" name="color1" placeholder="Color personalizado 1" />
-                 <input type="text" name="color2" placeholder="Color personalizado 2 (hover)" />
+                 <input type="text" name="color1" placeholder="Color 1: #000" />
+                 <input type="text" name="color2" placeholder="Color 2 (hover): #393939" />
                  <input type="text" name="portrait" placeholder="Link de la portada" />
                  <select name="category"><!-- Los valores de este <select> se crean al instalar el plug-in, en base a las categorías que se creen en el instalador -->
                     <option>notas</option>
@@ -33,7 +33,8 @@
                     <li><a onclick="addSub()"><u>s</u></a></li>
                     <li><a onclick="addList()">list</a></li>
                     <li><a onclick="addImg()">img</a></li>
-                    <li><a onclick="addCimg()">cimg</a></li>
+                    <li><a onclick="addCimg()">c.img</a></li>
+                    <li><a onclick="addRimg()">r.img</a></li>
                 </ul>
             </div>
             <textarea name="post" id="text"></textarea>
@@ -51,10 +52,13 @@
                 document.getElementById("text").value += "[li][/li]";
             }
             function addImg() {
-                document.getElementById("text").value += "[rect][/rect]";
+                document.getElementById("text").value += "[img][/img]";
             }
             function addCimg() {
                 document.getElementById("text").value += "[circle][/circle]";
+            }
+            function addRimg() {
+                document.getElementById("text").value += "[rect][/rect]";
             }
             </script>
          </form>

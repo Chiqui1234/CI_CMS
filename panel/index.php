@@ -42,7 +42,7 @@
 			<ul><?php include_once("../notas/notas.php"); ?></ul>
 		</div>-->
 
-		<div class="box dashed">
+		<div class="welcome">
 			<h1>¡Bienvenido, <?php echo $aliasUsuario; ?>!</h1>
 			<p>CI_CMS Versión <?php echo $version; ?></p>
 			<p><strong>¡Versión actualizada!</strong></p>

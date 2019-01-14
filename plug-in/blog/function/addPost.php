@@ -51,27 +51,35 @@ function addPost($title, $tag, $portrait, $category, $post, $color1, $color2) {
     require_once("htmlPost.php"); // Importo la función. 
     $htmlPostFinal = htmlPost($end); /* Con la función importada, ahora le paso los valores del creador del post (comúnmente el creador de posts se visualiza desde panel.php y se trae,
     por lo menos, de panel/include/posts.php) y me devuelve el código completo; que almaceno en mi variable $htmlPostFinal. */
-    
-    /* Antes de guardar el archivo, debo convertir las etiquetas a código real */
-    $search = array("[b]", "[/b]",
-    "[i]", "[/i]",
-    "[u]", "[/u]",
-    "[li]", "[/li]",
-    "[img]", "[/img]",
-    "[circle]", "[/circle]",
-    "[rect]", "[/rect]"); // Circle y Rect sirven para darle forma a una imágen, para que el párrafo se adapte a él
-    $replace = array("<strong>", "</strong>",
-    "<i>", "</i>",
-    "<u>", "</u>",
-    "<ul><li>", "</li></ul>",
-    "<img src='", "' width='100%' />",
-    "<div id='circle' style='background-image:url(\"", "\");'></div>",
-    "<div id='rect' style='background-image:url(\"", "\");'></div>");
-    $htmlPostFinalReplace = str_replace($search, $replace, $htmlPostFinal);
+    if(isset($htmlPostFinal)) {
+        /* Antes de guardar el archivo, debo convertir las etiquetas a código real */
+        $search = array("[b]", "[/b]",
+        "[i]", "[/i]",
+        "[u]", "[/u]",
+        "[li]", "[/li]",
+        "[info]", "[/info]",
+        "[img]", "[/img]",
+        "[br]",
+        "[h1]", "[/h1]".
+        "[link]", "[/link]",
+        "[circle]", "[/circle]",
+        "[rect]", "[/rect]"); // Circle y Rect sirven para darle forma a una imágen, para que el párrafo se adapte a él
+        $replace = array("<strong>", "</strong>",
+        "<i>", "</i>",
+        "<u>", "</u>",
+        "<ul><li>", "</li></ul>",
+        "<div id='info'><div class='logo'></div>", "</div>",
+        "<img src='", "' width='100%' />",
+        "<br />",
+        "<h1>", "</h1>",
+        "<a href=\"", "\">link</a>",
+        "<div id='circle' style='background-image:url(\"", "\");'></div>",
+        "<div id='rect' style='background-image:url(\"", "\");'></div>");
+        $htmlPostFinalReplace = str_replace($search, $replace, $htmlPostFinal);
 
-    $htmlPostFile = fopen($superRoute."/index.php", "w"); // Creo el index.php (post) dentro de la carpeta. Esto está bueno porque incluso, nos ahorra el mod_rewrite del .htaccess para tener "URLs amigables"
-    fwrite($htmlPostFile, $htmlPostFinalReplace); // Escribo el post
-    fclose($htmlPostFile); // Cierro :D
+        $htmlPostFile = fopen($superRoute."/index.php", "w"); // Creo el index.php (post) dentro de la carpeta. Esto está bueno porque incluso, nos ahorra el mod_rewrite del .htaccess para tener "URLs amigables"
+        fwrite($htmlPostFile, $htmlPostFinalReplace); // Escribo el post
+        fclose($htmlPostFile); // Cierro :D
                                                           /* Agrego el post al listado del usuario */
                                                           require("addPostToList.php");
                                                           addPostToList($end, locacion()."user/".$_COOKIE["emailCookie"]."/mis-posts.php", $friendlyTitle);
@@ -81,6 +89,8 @@ function addPost($title, $tag, $portrait, $category, $post, $color1, $color2) {
 
 
     echo '<a href="'.$superRoute.'">$superRoute</a>';
+    }
+    
     } else {
         echo '<p>El nombre del post ya existe.</p>';
     }

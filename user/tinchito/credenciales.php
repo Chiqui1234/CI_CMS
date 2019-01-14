@@ -1,0 +1,1 @@
+<?php $activoUsuario=0; $aliasUsuario="tinchito"; $emailUsuario="tinchito@outlook.com.ar"; $contrasenaUsuario="testeados"; $diaDeRegistro="01.14.19"; $rank=2; /* 0: administrador | 1: autor | 2: visitante */ ?>

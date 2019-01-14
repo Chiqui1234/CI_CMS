@@ -8,4 +8,8 @@
     <div class="title">Segundo testeo</div>
     <div class="category">13/1/2019 a las 4:39</div>
     </a></li>
+    <li style="background-image:url('notas/PorqulosVRMdeberanimportarte/img/asus-crosshair-vii-hero-wifii.jpg');"><a href="notas/PorqulosVRMdeberanimportarte" style="color: #b93535;">
+    <div class="title">Porqué los VRM deberían importarte</div>
+    <div class="category">13/1/2019 a las 16:33</div>
+    </a></li>
     

@@ -1,0 +1,1 @@
+<?php $tag0 = voltaje; ?><?php $tag1 = vrm; ?><?php $tag2 = regulador; ?><?php $tag3 = modulo; ?><?php $tag4 = oc; ?><?php $n=5; ?>

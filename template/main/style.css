@@ -84,7 +84,7 @@ body {
 }
 #root {
 	display: grid;
-	grid-template-columns: 20% 60% 20%;
+	grid-template-columns: 15% 70% 15%;
 	grid-template-rows: 100vh auto auto auto;
 	grid-row-gap: 10px;
 }
@@ -209,7 +209,7 @@ body {
 	background-size: cover;
 	background-position: center;
 }
-@media only screen and (max-width: 961px) {
+@media only screen and (max-width: 1025px) {
 	#root .mainMultimedia {
 		grid-column: 1 / span 3;
 		grid-row: 2;
@@ -251,4 +251,6 @@ body {
 		grid-column: 1 / span 3;
 		border: none;
 	}
+}
+@media only screen and (max-width: 1281px) {
 }

@@ -74,16 +74,16 @@ if(isLogIn() && $rol==0 || $active==0) { // Si el usuario es Administrador y est
     /* Se crea este archivo para indexar los posts del usuario, que por defecto (cuando no hay posts)
     imprime el mensaje "No tenés posts de tu autoria." */
     $misPostsArchivo = fopen($rutaUsuario."/mis-posts.php", "w");
-    fwrite($misPostsArchivo, "<?php echo 'No tenés posts de tu autoría.'; ?>");
+    fwrite($misPostsArchivo, "");
     fclose($misPostsArchivo);
     /* Creamos el token */
     $contrasenaTokenAEscribir = '<?php $contrasenaTokenUsuario=md5("'.$end[2].'"); ?>';
     $tokenRuta = fopen($rutaUsuario."/contrasena-token.php", "w");
     fwrite($tokenRuta, $contrasenaTokenAEscribir);
     fclose($tokenRuta);
-    echo "<div id='centrado'>¡Gracias por registrarte! Te enviaremos un email a ".$end[1]." con tus credenciales. ¡Validá tu cuenta e <a href='../../ingresar.php'>iniciá sesión</a>!</div>";
+    echo "<div id='centrado'>¡Gracias por registrarte! Te enviaremos un email a ".$end[1]." con tus credenciales. ¡Validá tu cuenta e <a href='../ingresar.php'>iniciá sesión</a>!</div>";
   } else {
-    echo "<div id='centrado'>Este mail ya fue registrado, <a href='../../recuperar-contrasena.php'>¿perdiste tu contraseña?</a>.</div>";
+    echo "<div id='centrado'>Este mail ya fue registrado, <a href='../recuperar-contrasena.php'>¿perdiste tu contraseña?</a>.</div>";
   }
 } else {
   echo "<div id='centrado'>Debés usar emails reconocidos, cómo gmail, outlook/hotmail/live y yahoo. Además, tu nombre de usuario no debe contener caracteres especiales.</div>";

@@ -69,12 +69,8 @@
 	background-image:url('icon/youtube.svg');
 	fill: #da2d22 !important;
 }
-#root .sidebar .connect .logo:hover {
-	box-shadow: 0 0 5px var(--darkShadow);
-}
 #root .sidebar .connect .texto {
 	margin-left: 10px;
-	width: 130px;
 	float: left;
 	color: rgb(131, 131, 131);
 	font-size: 14px;
@@ -133,7 +129,7 @@
 	font-size: 20px;
 	text-shadow: 0 0 5px var(--lightShadow);
 }
-@media only screen and (max-width: 961px) {
+@media only screen and (max-width: 1025px) {
 	#root .sidebar, #root .profileSidebar {
 		grid-column: 1 / span 3;
 		grid-template-columns: auto 250px auto;
@@ -154,11 +150,52 @@
 		text-align: center;
 	}
 }
-@media only screen and (max-width: 1281px) {
+@media only screen and (max-width: 1367px) {
 	#root .sidebar {
-		grid-template-columns: auto 200px auto;
-		grid-template-rows: 200px 28px 30px auto;
+		grid-template-columns: auto 150px auto;
+		grid-template-rows: 150px 20px 28px auto;
 	}
-	#root .sidebar .title {font-size: 24px;}
-	#root .sidebar .caption {font-size: 28px;}
+	#root .sidebar .avatar {
+		width: 150px;
+		height: 150px;
+	}
+	#root .sidebar .title, #root .profileSidebar .nickname {
+		font-size: 20px;
+	}
+	#root .sidebar .caption {
+		display: none;
+	}
+	#root .sidebar .connect ul li .fb, #root .sidebar .connect ul li .tw, #root .sidebar .connect ul li .yt {width: 30px;height: 30px;}
+	#root .sidebar .connect .texto {
+		font-size: 10px;
+	}
+	#root .sidebar .connect .texto span {
+		font-size: 10px;
+	}
+}
+@media only screen and (max-width: 1601px) {
+	#root .sidebar {
+		grid-template-columns: auto 170px auto;
+		grid-template-rows: 170px 24px 30px auto;
+	}
+	#root .sidebar .avatar {
+		width: 170px;
+		height: 170px;
+	}
+	#root .sidebar .title, #root .profileSidebar .nickname {
+		font-size: 24px;
+	}
+	#root .sidebar .caption {
+		display: none;
+	}
+	#root .sidebar .connect .fb, #root .sidebar .connect .tw, #root .sidebar .connect .yt {
+		width: 32px;
+		height: 32px;
+	}
+	#root .sidebar .connect .texto {
+		font-size: 12px;
+	}
+	#root .sidebar .connect .texto span {
+		font-size: 12px;
+	}
 }

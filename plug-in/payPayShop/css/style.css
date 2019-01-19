@@ -1,0 +1,21 @@
+#root #store {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+}
+#image {
+    grid-column: 1;
+    grid-row: 1;
+    background-size: cover;
+
+}
+#payPayBtn input[type=submit] {
+    border: none;
+    outline: none;
+    width: 32px;
+    height: 32px;
+    background-image:url('../../plug-in/payPayShop/css/img/addToCart.png'); /* Si se llama desde /tienda/producto/ */
+    background-color: transparent;
+    background-size: 100%;
+    cursor: pointer;
+}

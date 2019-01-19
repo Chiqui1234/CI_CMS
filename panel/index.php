@@ -12,6 +12,9 @@
  </head>
 
 <body>
+<style>#reviews, #notas {
+	grid-column: 2;
+}</style>
 <!-- Navegación -->
 <?php include_once(locacion()."template/main/include/nav.php"); ?>
 		
@@ -42,7 +45,7 @@
 			<ul><?php include_once("../notas/notas.php"); ?></ul>
 		</div>-->
 
-		<div class="box dashed">
+		<div class="welcome">
 			<h1>¡Bienvenido, <?php echo $aliasUsuario; ?>!</h1>
 			<p>CI_CMS Versión <?php echo $version; ?></p>
 			<p><strong>¡Versión actualizada!</strong></p>
@@ -55,8 +58,15 @@
 			<?php include_once("../template/main/configuration/footer.php"); ?> <!-- Ya hay un "box" dentro de este archivo | Archivo para configurar el footer del template -->
 		
 	<?php 
-	 } // Cierre if($rank < 2)
-	} // Cierre if( chequeoSesionActiva() ) ?>
+	 /* Cierre if($rank < 2) */
+	}  else {
+		 echo '<div id="root"><div id="reviews">No tenés el rango necesario para entrar al Escritorio.</div></div>';
+	 }
+	} /* Cierre if( chequeoSesionActiva() ) */ else {
+		echo '<div id="root"><div id="reviews">Ni siquiera iniciaste sesión, ¿y me pedís entrar al panel? ¡Pará fiera!</div></div>';
+	}
+
+	?>
 </div>
 </body>
 </html>

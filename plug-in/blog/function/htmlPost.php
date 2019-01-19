@@ -5,6 +5,15 @@ function htmlPost(array $info) { /* $info es un array y contiene: $title, $tag, 
     <div class="comments"><?php include_once("../fancyComments/include/mini.php"); ?></div>
     Si existe el plug-in fancyComments (u otro, esta variable puede modificarse por otro instalador de algún plug-in de
     comentarios ;D) */
+    $colors = "";
+    if(isset($info[5]) && isset($info[6]) ) {
+        $colors='<style>
+        :root {
+            --linkColor: '.$info[5].';
+            --linkHover: '.$info[6].';
+        }
+        </style>';
+    }
 
     $template = '<!doctype html>
     <html lang="es">
@@ -17,12 +26,7 @@ function htmlPost(array $info) { /* $info es un array y contiene: $title, $tag, 
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
      </head>
     <body>
-    <style>
-    :root {
-        --linkColor: '.$info[5].';
-	    --linkHover: '.$info[6].';
-    }
-    </style>
+    '.$colors.'
     <?php include_once(locacion()."template/main/include/nav.php"); ?>
     
     <div id="root">

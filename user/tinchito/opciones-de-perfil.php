@@ -1,2 +1,2 @@
 <?php $avatarUsuario="https://scontent.faep4-1.fna.fbcdn.net/v/t1.0-9/31351289_1778476068842197_8811803553015267328_n.jpg?_nc_cat=0&oh=01408922f19b269638b3aa996b57e965&oe=5C0A98AA";
-    $portadaUsuario="user/Chiqui1234/portada.png";  $publicoUsuario=0; ?>
+    $portadaUsuario="img/portada/space3.jpg";  $publicoUsuario=0; ?>

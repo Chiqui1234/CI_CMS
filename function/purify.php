@@ -1,6 +1,6 @@
 <?php
 /* Esta función recibe entrada de datos del usuario y las devuelve saneadas */
-function sanear(array $start, $n) {
+function sanear(/*array */$start, $n) {
     // $start = array dónde se introduce cada variable a sanear
     // $n cantidad de variables a sanear
     $end = array($n);

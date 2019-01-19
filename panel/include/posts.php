@@ -30,8 +30,8 @@
                 <ul>
                     <li><a onclick="addBold()"><strong>b</strong></a></li>
                     <li><a onclick="addItalic()"><i>i</i></a></li>
-                    <li><a onclick="addSub()"><u>s</u></a></li>
-                    <li><a onclick="addList()">list</a></li>
+                    <!--<li><a onclick="addSub()"><u>s</u></a></li>-->
+                    <li><a onclick="addList()">li</a></li>
                     <li><a onclick="addImg()">img</a></li>
                     <li><a onclick="addCimg()">c.img</a></li>
                     <li><a onclick="addRimg()">r.img</a></li>
@@ -45,9 +45,9 @@
             function addItalic() {
                 document.getElementById("text").value += "[i][/i]";
             }
-            function addSub() {
+            /*function addSub() {
                 document.getElementById("text").value += "[u][/u]";
-            }
+            }*/
             function addList() {
                 document.getElementById("text").value += "[li][/li]";
             }

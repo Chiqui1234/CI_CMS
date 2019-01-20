@@ -10,6 +10,8 @@ Requeriments to run: only Apache 2 / Nginx (with PHP 7.x module)
 
 /*****************************************/
 
+Necesidad de Hot-Fix en checker.php (plug-in de tienda) --> Error 10000: edición desautorizada (y ejecución) de datos críticos de un plugin
+
 Tareas pendientes / Tasks (ES)
 - Plug-In de Tienda (utilizando PayPal), urgente y necesario para mis proyectos personales, por lo que tiene prioridad máxima.
 - Optimizar llamadas a función locacion(). Se la llama más de una vez, cuándo puede ser llamada una única vez y guardar su devolución en una variable para próximas consultas.

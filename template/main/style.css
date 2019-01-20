@@ -120,6 +120,8 @@ body {
 	background-size: cover;
 	background-color: #212121;
 	background-position: center;
+	overflow: hidden;
+	
 }
 #reviews ul li a, #notas ul li a {
 	background-image: url('styleHack/bg-35.png');
@@ -130,10 +132,13 @@ body {
 	grid-template-rows: 50px 26px 20px 50px;
 	text-align: center;
 }
+#reviews ul li a:hover, #notas ul li a:hover {
+	opacity: 0;
+}
 #reviews ul li .title, #notas ul li .title {
 	width: 100%;
 	font-family: Nikoleta;
-	font-size: 26px;
+	font-size: 24px;
 	grid-row: 2;
 	text-shadow: 0 0 5px var(--lightShadow);
 }
@@ -141,7 +146,7 @@ body {
 	width: 100%;
 	grid-row: 3;
 	font-family: Roboto;
-	font-size: 20px;
+	font-size: 19px;
 	text-shadow: 0 0 5px var(--lightShadow);
 }
 #reviews ul li .category span, #notas ul li .category span {
@@ -224,9 +229,12 @@ body {
 	#reviews, #notas {
 		grid-column: 1 / span 3;
 	}
-	#review ul, #notas ul {
+	#reviews ul, #notas ul {
 		grid-template-columns: 100%;
 		grid-column: 1 / span 3;
+	}
+	#reviews ul li a, #notas ul li a {
+		grid-template-rows: 10px 54px 40px 10px; 
 	}
 	#reviews ul li .title, #notas ul li .title {
 		font-size: 20px;
